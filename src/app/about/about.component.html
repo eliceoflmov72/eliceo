@@ -1,1 +1,37 @@
-<p>about works!</p>
+<div class="about-container">
+  <!-- Formas grandes animadas -->
+  <div class="large-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="about-content">
+    <div class="profile-section">
+      <div class="coin-container">
+        <div class="coin">
+          <div class="coin-front">
+            <img src="about/eliceo.jpg" alt="Profile" />
+          </div>
+          <div class="coin-back">
+            <div class="back-content">
+              <h3>{{ 'about.connect' | translate }}</h3>
+              <p>{{ 'about.passion' | translate }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="title-container">
+        <h1 class="main-title">{{ 'about.greeting' | translate }}</h1>
+        <div class="subtitle-wrapper">
+          <h2 class="dynamic-subtitle" [class.changing]="isSubtitleChanging">
+            {{ currentSubtitle }}
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

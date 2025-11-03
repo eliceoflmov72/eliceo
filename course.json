@@ -1,0 +1,14 @@
+{
+    "name": "Cibersecurity Course",
+    "version": "1.0.0",
+    "description": "A comprehensive course on cybersecurity fundamentals and practices.",
+    "topics": [
+        "Introduction to Cybersecurity",
+        "Network Security",
+        "Application Security",
+        "Data Protection",
+        "Incident Response",
+        "Ethical Hacking",
+        "Security Policies and Compliance"
+    ]
+}

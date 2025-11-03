@@ -1,0 +1,14 @@
+<div class="technologies-container" #technologiesContainer [class.with-background]="showBackground">
+  <div class="technology-icon" *ngFor="let tech of technologies; let i = index"
+       [pTooltip]="tech.toUpperCase()"
+       tooltipPosition="bottom"
+       [style.animation-delay]="i * 0.1 + 's'"
+       [class.visible]="isVisible">
+    <ng-container *ngIf="!imageLoaded[tech]; else imageTemplate">
+      <div class="error-icon">!</div>
+    </ng-container>
+    <ng-template #imageTemplate>
+      <img [src]="getImagePath(tech)" [alt]="tech"/>
+    </ng-template>
+  </div>
+</div>

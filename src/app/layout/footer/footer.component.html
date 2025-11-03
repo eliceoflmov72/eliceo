@@ -1,0 +1,92 @@
+<footer class="footer">
+  <div class="footer-background">
+    <div class="depth-layers">
+      <div class="depth-layer layer-1"></div>
+      <div class="depth-layer layer-2"></div>
+      <div class="depth-layer layer-3"></div>
+    </div>
+    <div class="floating-elements">
+      <div class="cube cube-1">
+        <div class="cube-face front"></div>
+        <div class="cube-face back"></div>
+        <div class="cube-face right"></div>
+        <div class="cube-face left"></div>
+        <div class="cube-face top"></div>
+        <div class="cube-face bottom"></div>
+      </div>
+      <div class="cube cube-2">
+        <div class="cube-face front"></div>
+        <div class="cube-face back"></div>
+        <div class="cube-face right"></div>
+        <div class="cube-face left"></div>
+        <div class="cube-face top"></div>
+        <div class="cube-face bottom"></div>
+      </div>
+      <div class="cube cube-3">
+        <div class="cube-face front"></div>
+        <div class="cube-face back"></div>
+        <div class="cube-face right"></div>
+        <div class="cube-face left"></div>
+        <div class="cube-face top"></div>
+        <div class="cube-face bottom"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-content">
+    <div class="footer-columns">
+      <!-- Columna de Contacto -->
+      <div class="footer-column">
+        <h3 class="column-title">{{ 'footer.contact.title' | translate }}</h3>
+        <div class="column-content">
+          <div class="email-container">
+            <a href="javascript:void(0)" class="footer-link" (click)="showEmailDialog()">
+              <i class="fas fa-envelope"></i>
+              {{email}}
+            </a>
+            <button class="copy-button" (click)="copyEmail()" [class.success]="copySuccess">
+              <i class="pi pi-copy"></i>
+            </button>
+          </div>
+          <a href="https://calendly.com/eliceomoreta/one-on-one-eliceo" class="footer-link" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-calendar-alt"></i>
+            {{ 'footer.contact.bookAppointment' | translate }}
+          </a>
+        </div>
+      </div>
+
+      <!-- Columna de Redes Sociales -->
+      <div class="footer-column">
+        <h3 class="column-title">{{ 'footer.profiles.title' | translate }}</h3>
+        <div class="column-content">
+          <a href="https://linkedin.com/in/eliceo-leon" class="footer-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+          <a href="https://github.com/eliceoflmov72" class="footer-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Columna de Enlaces -->
+      <div class="footer-column">
+        <h3 class="column-title">{{ 'footer.links.title' | translate }}</h3>
+        <div class="column-content">
+          <a href="/info" class="footer-link" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-shield-alt"></i>
+            {{ 'footer.links.portfolioInfo' | translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <div class="copyright">
+        <p>{{ 'footer.copyright' | translate }}</p>
+      </div>
+    </div>
+  </div>
+</footer>

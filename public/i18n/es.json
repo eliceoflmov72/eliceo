@@ -1,0 +1,239 @@
+{
+  "about": {
+    "greeting": "Hola, soy Eliceo",
+    "connect": "¡Conectemos!",
+    "passion": "Apasionado por crear aplicaciones digitales",
+    "subtitles": {
+      "webDeveloper": "Desarrollador Web",
+      "fullStack": "Desarrollador Full-Stack",
+      "dataAnalyst": "Analista de Datos"
+    }
+  },
+  "languages": {
+    "en": "Inglés",
+    "es": "Español"
+  },
+  "nav": {
+    "home": "Inicio",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "studies": "Estudios",
+    "stack": "Stack",
+    "contact": "Contacto"
+  },
+  "experience": {
+    "zepo": {
+      "title": "Desarrollador Full-Stack",
+      "position": "Zepo Intelligence",
+      "description": "Formé parte de una startup seleccionada para el programa Google for Startups, donde desarrollé en plataformas relacionadas con la ciberseguridad y security-awareness. Colaboré en la migración y eliminación de código legacy, y desarrollé servicios, paneles interactivos y visualizaciones para mostrar métricas clave a los usuarios. Optimicé y adapté un complemento distribuido a través de la tienda de Microsoft, mejorando su funcionalidad. Diseñé e implementé dashboards analíticos en TypeScript y Angular, integrados con APIs REST. Desarrollé y gestioné bases de datos NoSQL con MongoDB como sistema principal, complementado con MySQL para soluciones específicas, y utilicé Python para procesos automatizados y scripts personalizados. Implementé tests automatizados para optimizar la resolución de bugs críticos. Utilicé Docker para gestionar entornos locales. Trabajé bajo metodologías ágiles."
+    },
+    "dialogo": {
+      "title": "Desarrollador Full-Stack",
+      "position": "Diálogo Tecnológico",
+      "description": "Desarrollé soluciones web full-stack para clientes externos, enfocándome en la componentización en Angular con estilos reutilizables en SASS y CSS. Construí APIs REST y servicios de autenticación JWT utilizando Spring Boot y Angular, con persistencia en bases de datos NoSQL (MongoDB). Implementé contenedores Docker para entornos de desarrollo y despliegue. Colaboré en la integración de nuevos componentes en proyectos existentes, mejorando la escalabilidad y mantenibilidad. Participé en metodologías ágiles, incluidas revisiones de código y planificación iterativa."
+    }
+  },
+  "projects": {
+    "abonOnline": {
+      "name": "AbonOnline",
+      "description": "AbonOnline es una plataforma web que <strong>centraliza</strong> la información sobre puntos de venta y recarga de abonos y billetes de transporte público mediante un <strong>mapa interactivo</strong>.<br/><br/><strong>Funciones destacadas</strong><br/>&nbsp;&nbsp;• Búsqueda geolocalizada en tiempo real<br/>&nbsp;&nbsp;• Gestión de <strong>favoritos</strong> y comentarios<br/>&nbsp;&nbsp;• Panel de administración con roles y estadísticas.<br/><br/>AbonOnline resuelve la fragmentación actual de la información y acerca el transporte público al ciudadano."
+    },
+    "mantenlo": {
+      "name": "Mantenlo",
+      "description": "Mantenlo es una aplicación web concebida para restaurantes que <strong>planifican y verifican tareas de mantenimiento e higiene</strong> en cada área de trabajo (cocina, barra, almacén…).<br/><br/><strong>Funciones clave</strong><br/>&nbsp;&nbsp;• Tablero de tareas diario por zonas.<br/>&nbsp;&nbsp;• Gestor de zonas y tareas.<br/>&nbsp;&nbsp;• Generador de documentos PDF.<br/>&nbsp;&nbsp;• Gestión de usuarios (activo/inactivo) de cada empleado.<br/>&nbsp;&nbsp;• Registro de actividad de empleados.<br/><br/>Además, Mantenlo ayuda a implementar y documentar de forma práctica el sistema <strong>APPCC</strong> (Análisis de Peligros y Puntos Críticos de Control), asegurando el control higiénico-sanitario exigido en auditorías."
+    },
+    "zemios": {
+      "name": "Zemios",
+      "description": "Se trata de una comunidad web para programadores juniors, creada con <strong>NestJS</strong>, <strong>MySQL</strong> y <strong>MongoDB</strong> (con @nestjs/mongoose).<br/><br/><strong>Qué ofrece</strong><br/>&nbsp;&nbsp;• Espacio para aprender, colaborar y desarrollar proyectos reales.<br/>&nbsp;&nbsp;• Impulsa la proyección profesional y conecta talento junior.<br/><br/>La plataforma fomenta el aprendizaje práctico mientras construyes tu carrera técnica."
+    },
+    "status": {
+      "private": "Privado",
+      "noLink": "Sin enlace",
+      "inactive": "Inactivo",
+      "active": "Activo",
+      "privateTooltip": "Este repositorio es privado"
+    }
+  },
+  "privacy": {
+    "title": "Política de privacidad",
+    "sections": {
+      "controller": {
+        "title": "Responsable del tratamiento",
+        "owner": "Titular",
+        "email": "Correo electrónico"
+      },
+      "data": {
+        "title": "Datos personales que se recogen",
+        "items": [
+          "Nombre y correo electrónico enviados a través del formulario de contacto.",
+          "Datos necesarios para reservar citas (nombre, correo, fecha y hora)."
+        ]
+      },
+      "purpose": {
+        "title": "Finalidad y base jurídica",
+        "text": "Gestionar consultas y reservas (art. 6.1.b RGPD) y responder comunicaciones con el consentimiento del usuario (art. 6.1.a RGPD)."
+      },
+      "retention": {
+        "title": "Plazo de conservación",
+        "text": "Datos de contacto: hasta resolver la consulta + 1 año.<br>Datos de reserva: 5 años para cumplimiento legal contable."
+      },
+      "recipients": {
+        "title": "Destinatarios",
+        "text": "No se cederán datos a terceros salvo obligación legal. El sitio está alojado en Cloudflare con servidores ubicados en la UE."
+      },
+      "rights": {
+        "title": "Derechos del usuario",
+        "text": "Acceso, rectificación, supresión, oposición, portabilidad y limitación. Para ejercerlos, envía un correo a"
+      },
+      "cookies": {
+        "title": "Cookies",
+        "text": "Este sitio no utiliza cookies propias ni de terceros."
+      },
+      "security": {
+        "title": "Medidas de seguridad",
+        "text": "Conexión cifrada HTTPS, acceso restringido y copias de seguridad diarias."
+      }
+    },
+    "lastUpdate": "Última actualización: 13 de junio de 2025",
+    "backHome": "Volver al inicio"
+  },
+  "footer": {
+    "contact": {
+      "title": "Contacto",
+      "bookAppointment": "Charlemos"
+    },
+    "profiles": {
+      "title": "Perfiles"
+    },
+    "links": {
+      "title": "Enlaces",
+      "portfolioInfo": "Más sobre el portfolio"
+    },
+    "emailDialog": {
+      "title": "Selecciona tu cliente de correo"
+    },
+    "copyright": "© 2025 Eliceo León"
+  },
+  "studies": {
+    "webDev": {
+      "title": "Desarrollo de Aplicaciones Web",
+      "institution": "IES Arcipreste de Hita",
+      "period": "2022 – 2024",
+      "description": "Formación práctica de grado superior especializada en desarrollo de aplicaciones, maquetación responsive y gestión de datos mediante APIs REST.",
+      "achievements": [
+        "Desarrollo de una plataforma web para recarga de abonos de transporte con geolocalización.",
+        "Integración de APIs REST para la gestión dinámica de datos y usuarios.",
+        "Optimización del rendimiento de la aplicación aplicando buenas prácticas de código limpio y lazy loading."
+      ],
+      "moreInfo": "Ver más información"
+    },
+    "aiBigData": {
+      "title": "IA y Big Data",
+      "institution": "IES Arcipreste de Hita",
+      "period": "2024 – 2025",
+      "description": "Especialización técnica en programación de sistemas de inteligencia artificial, aprendizaje automático y análisis de grandes volúmenes de datos. Formación orientada a entornos reales mediante herramientas modernas de procesamiento, modelado y visualización.",
+      "achievements": [
+        "Entrenamiento y validación de modelos de machine learning aplicados a distintos casos de uso.",
+        "Automatización de flujos de datos con herramientas como Apache Kafka, Spark y KNIME.",
+        "Análisis y visualización de grandes volúmenes de datos mediante Power BI y MongoDB.",
+        "Uso de múltiples datasets de muestra para prácticas de minería, clasificación y predicción de datos."
+      ],
+      "moreInfo": "Ver más información"
+    },
+    "achievements": "Logros y habilidades adquiridas:"
+  },
+  "stack": {
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Bases de datos",
+      "analysis": "Análisis",
+      "management": "Gestión"
+    },
+    "technologies": {
+      "typescript": "Desarrollé lógica compartida entre frontend y backend, asegurando tipado estricto.",
+      "angular": "Creé y mantuve proyectos en distintas versiones, implementando lazy loading y pruebas unitarias.",
+      "material": "Personalicé temas Material Design para cumplir estándares de accesibilidad AA y coherencia de marca.",
+      "primeng": "Integré múltiples componentes para acelerar la construcción de paneles administrativos e interactivos.",
+      "react-native": "Experimenté con React Native en proyectos derivados de Zemios.",
+      "tailwind": "Maqueté interfaces responsivas de manera ágil.",
+      "bootstrap": "Mantuve proyectos legacy y los refactoricé hacia un CSS modular con Tailwind.",
+      "sass": "Gestioné variables y mixins globales para theming dinámico y transición de SCSS a CSS.",
+      "figma": "Diseñé prototipos e implementé interfaces accesibles a partir de diseños de la plataforma.",
+      "spring-boot": "Expuse microservicios REST seguros con JWT y pruebas de integración.",
+      "node": "Desarrollé scripts CLI y servidores Express desplegados para mi PFG.",
+      "nestjs": "Construí APIs modulares (REST y GraphQL) con validación DTO y arquitectura hexagonal.",
+      "python": "Realicé extracción, limpieza y análisis de datos en distintos contextos.",
+      "aws": "Desplegué entornos distribuidos, configuré máquinas y probé diversos servicios de la plataforma.",
+      "google-cloud": "Implementé Cloud Functions para generar PDFs y disparar workflows asíncronos.",
+      "firebase": "Configuré Auth y Firestore para sincronización en tiempo real y control de roles, usando su Backend as a Service.",
+      "docker": "Creé contenedores de desarrollo reproducibles y optimicé builds en CI.",
+      "mongodb": "Diseñé esquemas flexibles e índices e integré MongoDB en APIs REST escalables.",
+      "mysql": "Modelé bases de datos relacionales para operaciones transaccionales críticas.",
+      "postgresql": "Aproveché JSONB y CTE complejas en servicios de analítica.",
+      "neo4j": "Modelé grafos orientados e implementé búsquedas con Cypher para detectar relaciones triangulares.",
+      "sql": "Escribí vistas materializadas y optimicé consultas con índices compuestos.",
+      "pandas": "Realicé limpieza y transformación de datasets antes de entrenar modelos.",
+      "r": "Realicé análisis estadístico avanzado y visualización de datos académicos.",
+      "ggplot2": "Generé visualizaciones publicables para informes de investigación.",
+      "matplotlib": "Construí gráficos personalizados para validar resultados.",
+      "seaborn": "Exploré distribuciones y correlaciones para diagnóstico de modelos.",
+      "scikit-learn": "Apliqué SVM, Random Forest y KNN, optimizando su rendimiento con grid search.",
+      "knime": "Orquesté flujos ETL y modelos sin necesidad de código.",
+      "power-bi": "Diseñé dashboards ejecutivos con KPIs actualizados en tiempo real.",
+      "git": "Gestioné ramas con Git-Flow y resolví conflictos complejos.",
+      "github": "Coordiné revisiones de código mediante pull requests y GitHub Actions.",
+      "clickup": "Usado para gestionar de manera eficiente y continua el trabajo en equipo.",
+      "linear": "Utilizado para gestionar el trabajo en equipo.",
+      "notion": "Usado de forma continua como sistema de organización personal.",
+      "slack": "Usado como entorno de comunicación para trabajo colaborativo.",
+      "n8n": "Integré APIs y bases de datos para automatizar tareas repetitivas sin código.",
+      "pandorabots": "Desarrollé chatbots rule-based para pruebas de NLP personales."
+    }
+  },
+  "info": {
+    "title": "Más sobre el portfolio",
+    "sections": {
+      "primeng": {
+        "title": "PrimeNG",
+        "description": "Se integran <strong>DialogModule</strong> y <strong>ButtonModule</strong> en ProjectsComponent para gestionar modales y botones accesibles. Además, <strong>TooltipModule</strong> añade pistas emergentes en StackComponent y TechnologiesComponent al pasar el ratón sobre elementos."
+      },
+      "reusable": {
+        "title": "Componentes reutilizables",
+        "description": "<strong>TitleComponent</strong> unifica la presentación de encabezados en cada sección (Experiencia, Estudios, Stack, Proyectos). <strong>TechnologiesComponent</strong> recibe un array de tecnologías y un flag <code>showBackground</code>, maneja fallos de carga, aplica animaciones de entrada y muestra tooltips."
+      },
+      "main": {
+        "title": "Componentes principales",
+        "description": "<strong>ProjectsComponent</strong> organiza los proyectos en un grid responsivo, abre detalles en un modal y aplica animaciones. <strong>StackComponent</strong> ofrece un sistema de pestañas y tarjetas con efecto flip. <strong>FooterComponent</strong> muestra enlaces de contacto y redes, así como un botón para copiar el email."
+      },
+      "directives": {
+        "title": "Directivas y servicios",
+        "description": "La <strong>AnimationDirective</strong> coordina animaciones de aparición en múltiples componentes, apoyada por <strong>AnimationService</strong> y <strong>TechnologiesAnimationService</strong>. Se usa el tema Material de PrimeNG, PrimeFlex y CSS propio para estilos adicionales."
+      },
+      "architecture": {
+        "title": "Arquitectura",
+        "description": "Proyecto desarrollado en Angular 17 usando standalone components, rutas integradas y directivas propias para garantizar mantenimiento ágil y alta escalabilidad."
+      },
+      "license": {
+        "title": "Licencia",
+        "description": "Este portfolio está bajo la licencia <strong>MIT</strong>.",
+        "permissions": {
+          "title": "Permisos",
+          "items": [
+            "Usar, modificar y distribuir el código",
+            "Usarlo incluso comercialmente",
+            "Crear obras derivadas"
+          ]
+        },
+        "restrictions": {
+          "title": "Condición única",
+          "items": [
+            "Debes incluir el aviso de copyright original"
+          ]
+        },
+        "note": "Puedes usar este código libremente, pero <strong>debes mantener este aviso de licencia</strong> en todas las copias.<br>© 2025 Eliceo León Moreta. Todos los derechos reservados."
+      }
+    },
+    "backHome": "Volver al inicio"
+  }
+}

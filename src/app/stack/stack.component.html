@@ -1,0 +1,45 @@
+<div class="stack-container">
+  <div class="custom-tabs">
+    <div class="tab-header">
+      @for (type of stackTypes; track type.key) {
+        <button [class.active]="activeTab === type.key"
+                (click)="setActiveTab(type.key)"
+                class="tab-button">
+          {{ 'stack.categories.' + type.key | translate }}
+        </button>
+      }
+    </div>
+    <div class="tab-content">
+      @for (type of stackTypes; track type.key) {
+        <div [class.active]="activeTab === type.key"
+             class="tab-panel">
+          <div class="stack-grid">
+            @for (item of type.items; track item.key; let i = $index) {
+              <div class="card" 
+                   (click)="toggleCard($event)"
+                   appAnimate
+                   [animationType]="'scale-in'"
+                   [animationOptions]="{ rootMargin: '-50px', delay: i * 100 }"
+                   [elementId]="'stack-' + i"
+                   [pTooltip]="getTooltipText(item.key)"
+                   tooltipPosition="bottom">
+                <div class="card-inner" [class.flipped]="item.isFlipped">
+                  <div class="card-front">
+                    @if (!imageLoaded[item.key.toLowerCase()]) {
+                      <div class="error-icon">!</div>
+                    } @else {
+                      <img [src]="getImagePath(item.key)" [alt]="item.key" (error)="handleImageError($event)" />
+                    }
+                  </div>
+                  <div class="card-back">
+                    <p>{{ 'stack.technologies.' + item.key | translate }}</p>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

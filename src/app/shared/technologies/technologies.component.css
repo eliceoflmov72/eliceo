@@ -1,0 +1,135 @@
+/* Contenedor principal de tecnologías */
+.technologies-container {
+  /* Layout */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  /* Espaciado */
+  padding: 1rem;
+  
+  /* Estilo visual */
+  border-radius: 1rem;
+}
+
+/* Clase para cuando se muestra el fondo */
+.technologies-container.with-background {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Icono individual de tecnología */
+.technology-icon {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  
+  /* Dimensiones */
+  width: 50px;
+  height: 50px;
+  padding: 0.5rem;
+  
+  /* Estilo visual */
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  /* Animación */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efecto hover del icono */
+.technology-icon:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen dentro del icono */
+.technology-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Icono de error cuando falla la carga de imagen */
+.error-icon {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Dimensiones */
+  width: 100%;
+  height: 100%;
+  
+  /* Estilo visual */
+  color: #ff4444;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+@media (max-width: 1200px) {
+  .technologies-container {
+    gap: 0.8rem;
+    padding: 0.8rem;
+  }
+
+  .technology-icon {
+    width: 45px;
+    height: 45px;
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 975px) {
+  .technologies-container {
+    gap: 0.6rem;
+    padding: 0.6rem;
+  }
+
+  .technology-icon {
+    width: 40px;
+    height: 40px;
+    padding: 0.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .technologies-container {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .technology-icon {
+    width: 35px;
+    height: 35px;
+    padding: 0.25rem;
+  }
+
+  .error-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .technologies-container {
+    gap: 0.4rem;
+    padding: 0.4rem;
+  }
+
+  .technology-icon {
+    width: 30px;
+    height: 30px;
+    padding: 0.2rem;
+  }
+
+  .error-icon {
+    font-size: 1.5rem;
+  }
+}

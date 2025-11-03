@@ -1,0 +1,163 @@
+/* ==========================================================================
+   ANIMACIONES REUTILIZABLES
+   ========================================================================== */
+
+/* Animación de entrada con escala y opacidad */
+.scale-in {
+  transform: scale(0.85);
+  opacity: 0.6;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scale-in.visible {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Animación de entrada desde abajo */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animación de entrada desde la izquierda */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Animación de entrada desde la derecha */
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Animación de aparición suave */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* Animación de rotación */
+.rotate-in {
+  transform: rotate(-10deg) scale(0.9);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rotate-in.visible {
+  transform: rotate(0) scale(1);
+  opacity: 1;
+}
+
+/* Animación de zoom */
+.zoom-in {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.zoom-in.visible {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Animación de rebote */
+.bounce-in {
+  transform: scale(0.3);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.bounce-in.visible {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Animación de flip */
+.flip-in {
+  transform: perspective(400px) rotateY(90deg);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flip-in.visible {
+  transform: perspective(400px) rotateY(0);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   INSTRUCCIONES DE USO
+   ========================================================================== */
+
+/*
+Para usar estas animaciones:
+
+1. Añade la clase base (ej: 'scale-in') al elemento que quieres animar
+2. Añade la clase 'visible' cuando el elemento entre en el viewport usando Intersection Observer
+
+Ejemplo de uso en TypeScript:
+```typescript
+@ViewChildren('animatedElement') elements!: QueryList<ElementRef>;
+private observer: IntersectionObserver;
+
+constructor() {
+  this.observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: '-50px'
+    }
+  );
+}
+
+ngAfterViewInit() {
+  setTimeout(() => {
+    this.elements.forEach(item => {
+      this.observer.observe(item.nativeElement);
+    });
+  }, 100);
+}
+
+ngOnDestroy() {
+  this.observer.disconnect();
+}
+```
+
+Ejemplo de uso en HTML:
+```html
+<div class="scale-in" #animatedElement>
+  Contenido animado
+</div>
+```
+*/ 

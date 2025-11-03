@@ -1,0 +1,239 @@
+{
+  "about": {
+    "greeting": "Hi, I'm Eliceo",
+    "connect": "Let's connect!",
+    "passion": "Passionate about building digital applications",
+    "subtitles": {
+      "webDeveloper": "Web Developer",
+      "fullStack": "Full-Stack Developer",
+      "dataAnalyst": "Data Analyst"
+    }
+  },
+  "languages": {
+    "en": "English",
+    "es": "Spanish"
+  },
+  "nav": {
+    "home": "Home",
+    "experience": "Experience",
+    "projects": "Projects",
+    "studies": "Studies",
+    "stack": "Stack",
+    "contact": "Contact"
+  },
+  "experience": {
+    "zepo": {
+      "title": "Full-Stack Developer",
+      "position": "Zepo Intelligence",
+      "description": "I was part of a startup selected for the Google for Startups program, where I worked on platforms related to cybersecurity and security-awareness. I contributed to the migration and removal of legacy code, and developed services, interactive dashboards, and data visualizations to display key metrics to users. I optimized and adapted a company add-on distributed through the Microsoft Store, improving its functionality. I designed and implemented analytical dashboards using TypeScript and Angular, integrated with REST APIs. I developed and managed NoSQL databases with MongoDB as the main system, complemented by MySQL for specific solutions, and used Python for automated processes and custom scripts. I implemented automated tests to improve the resolution of critical bugs. I used Docker to manage local environments. I worked under agile methodologies."
+    },
+    "dialogo": {
+      "title": "Full-Stack Developer",
+      "position": "Diálogo Tecnológico",
+      "description": "I created full-stack web solutions for external clients: single-page apps in Angular with reusable SASS/CSS components, REST APIs and JWT services in Spring Boot & Angular with MongoDB persistence, Docker containerization, and the integration of new components to improve scalability and maintainability in an agile setting."
+    }
+  },
+  "projects": {
+    "abonOnline": {
+      "name": "AbonOnline",
+      "description": "AbonOnline is a web platform built with Node.js and Angular that <strong>centralizes</strong> information on points of sale and top-up locations for public-transport tickets through an <strong>interactive map</strong>.<br/><br/><strong>Key features</strong><br/>&nbsp;&nbsp;• Real-time geolocated search<br/>&nbsp;&nbsp;• <strong>Favorites</strong> and comments management<br/>&nbsp;&nbsp;• Admin panel with roles and statistics.<br/><br/>AbonOnline solves today's information fragmentation and brings public transport closer to citizens."
+    },
+    "mantenlo": {
+      "name": "Mantenlo",
+      "description": "Mantenlo is a web app for restaurants that <strong>plans and verifies maintenance and hygiene tasks</strong> in every work area (kitchen, bar, storeroom…).<br/><br/><strong>Key functions</strong><br/>&nbsp;&nbsp;• Daily task board by zone<br/>&nbsp;&nbsp;• Zone and task manager<br/>&nbsp;&nbsp;• PDF document generator<br/>&nbsp;&nbsp;• Employee-level user management (active/inactive)<br/>&nbsp;&nbsp;• Employee activity log<br/><br/>With Mantenlo, staff comply with cleanliness and food-safety rules while management gets clear, traceable reports.<br/><br/>Mantenlo also helps implement and document the <strong>HACCP</strong> (Hazard Analysis and Critical Control Points) system required in audits."
+    },
+    "zemios": {
+      "name": "Zemios",
+      "description": "Zemios is a web community for junior developers built with <strong>NestJS</strong>, <strong>MySQL</strong> and <strong>MongoDB</strong> (via @nestjs/mongoose).<br/><br/><strong>What it offers</strong><br/>&nbsp;&nbsp;• A space to learn, collaborate and build real projects<br/>&nbsp;&nbsp;• Boosts professional growth and connects junior talent<br/><br/>The platform promotes hands-on learning while you grow your technical career."
+    },
+    "status": {
+      "private": "Private",
+      "noLink": "No link",
+      "inactive": "Inactive",
+      "active": "Active",
+      "privateTooltip": "This repository is private"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "sections": {
+      "controller": {
+        "title": "Data Controller",
+        "owner": "Owner",
+        "email": "Email"
+      },
+      "data": {
+        "title": "Personal data collected",
+        "items": [
+          "Name and email sent via the contact form.",
+          "Data needed to book appointments (name, email, date and time)."
+        ]
+      },
+      "purpose": {
+        "title": "Purpose and legal basis",
+        "text": "Manage enquiries and bookings (Art. 6 § 1 b GDPR) and respond to communications with the user's consent (Art. 6 § 1 a GDPR)."
+      },
+      "retention": {
+        "title": "Retention period",
+        "text": "Contact data: until the enquiry is resolved + 1 year.<br>Booking data: 5 years for legal accounting compliance."
+      },
+      "recipients": {
+        "title": "Recipients",
+        "text": "Data will not be shared with third parties except under legal obligation. The site is hosted on Cloudflare with servers located in the EU."
+      },
+      "rights": {
+        "title": "User rights",
+        "text": "Access, rectification, erasure, objection, portability and restriction. To exercise them, send an email to"
+      },
+      "cookies": {
+        "title": "Cookies",
+        "text": "This site uses no first- or third-party cookies."
+      },
+      "security": {
+        "title": "Security measures",
+        "text": "HTTPS encryption, restricted access and daily backups."
+      }
+    },
+    "lastUpdate": "Last update: June 13, 2025",
+    "backHome": "Back to Home"
+  },
+  "footer": {
+    "contact": {
+      "title": "Contact",
+      "bookAppointment": "Let's talk"
+    },
+    "profiles": {
+      "title": "Profiles"
+    },
+    "links": {
+      "title": "Links",
+      "portfolioInfo": "More about the portfolio"
+    },
+    "emailDialog": {
+      "title": "Choose your email client"
+    },
+    "copyright": "© 2025 Eliceo León"
+  },
+  "studies": {
+    "webDev": {
+      "title": "Web Application Development",
+      "institution": "IES Arcipreste de Hita",
+      "period": "2022 – 2024",
+      "description": "Higher vocational training focused on application development, responsive layouts and data management via REST APIs.",
+      "achievements": [
+        "Developed a web platform for topping up transport passes with geolocation.",
+        "Integrated REST APIs for dynamic data and user management.",
+        "Optimized app performance by applying clean-code practices and lazy loading."
+      ],
+      "moreInfo": "See more information"
+    },
+    "aiBigData": {
+      "title": "AI and Big Data",
+      "institution": "IES Arcipreste de Hita",
+      "period": "2024 – 2025",
+      "description": "Technical specialization in artificial-intelligence systems, machine learning and big-data analytics, using modern tools for processing, modeling and visualization in real-world environments.",
+      "achievements": [
+        "Trained and validated machine-learning models for various use cases.",
+        "Automated data flows with Apache Kafka, Spark and KNIME.",
+        "Analyzed and visualized large-scale data with Power BI and MongoDB.",
+        "Used multiple datasets for mining, classification and prediction projects."
+      ],
+      "moreInfo": "See more information"
+    },
+    "achievements": "Achievements and skills acquired:"
+  },
+  "stack": {
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Databases",
+      "analysis": "Analysis",
+      "management": "Management"
+    },
+    "technologies": {
+      "typescript": "Developed shared logic between frontend and backend, ensuring strict typing.",
+      "angular": "Built and maintained projects across different versions, implementing lazy loading and unit tests.",
+      "material": "Customized Material Design themes to meet AA accessibility standards and brand consistency.",
+      "primeng": "Integrated multiple components to speed up the creation of admin and interactive panels.",
+      "react-native": "Experimented with React Native in spin-off projects from Zemios.",
+      "tailwind": "Quickly laid out responsive interfaces.",
+      "bootstrap": "Maintained legacy projects and refactored them towards modular CSS with Tailwind.",
+      "sass": "Managed global variables and mixins for dynamic theming and the transition from SCSS to CSS.",
+      "figma": "Designed prototypes and implemented accessible UIs based on platform designs.",
+      "spring-boot": "Exposed secure REST microservices with JWT and integration testing.",
+      "node": "Developed CLI scripts and Express servers deployed for my final degree project.",
+      "nestjs": "Built modular APIs (REST and GraphQL) with DTO validation and hexagonal architecture.",
+      "python": "Performed data extraction, cleaning, and analysis in various contexts.",
+      "aws": "Deployed distributed environments, configured machines, and tested different platform services.",
+      "google-cloud": "Implemented Cloud Functions to generate PDFs and trigger asynchronous workflows.",
+      "firebase": "Configured Auth and Firestore for real-time sync and role management, using its Backend as a Service.",
+      "docker": "Created reproducible development containers and optimized CI builds.",
+      "mongodb": "Designed flexible schemas and indexes, and integrated MongoDB into scalable REST APIs.",
+      "mysql": "Modeled relational databases for critical transactional operations.",
+      "postgresql": "Used JSONB and complex CTEs in analytics services.",
+      "neo4j": "Modeled directed graphs and implemented Cypher-based searches to detect triangular relationships.",
+      "sql": "Wrote materialized views and optimized queries with composite indexes.",
+      "pandas": "Cleaned and transformed datasets before model training.",
+      "r": "Conducted advanced statistical analysis and visualized academic data.",
+      "ggplot2": "Created publication-ready visualizations for research reports.",
+      "matplotlib": "Built custom charts to validate results.",
+      "seaborn": "Explored distributions and correlations for model diagnostics.",
+      "scikit-learn": "Applied SVM, Random Forest, and KNN, optimizing performance with grid search.",
+      "knime": "Orchestrated ETL flows and models without writing code.",
+      "power-bi": "Designed executive dashboards with real-time updated KPIs.",
+      "git": "Managed branches using Git-Flow and resolved complex conflicts.",
+      "github": "Coordinated code reviews via pull requests and GitHub Actions.",
+      "clickup": "Used for team task management on daily basis.",
+      "linear": "Used for team task management.",
+      "notion": "Continuously used as a personal organization system.",
+      "slack": "Used as a communication environment for collaborative work.",
+      "n8n": "Integrated APIs and databases to automate repetitive tasks without code.",
+      "pandorabots": "Developed rule-based chatbots for personal NLP experiments."
+    }
+  },
+  "info": {
+    "title": "More about the portfolio",
+    "sections": {
+      "primeng": {
+        "title": "PrimeNG",
+        "description": "<strong>DialogModule</strong> and <strong>ButtonModule</strong> are integrated in ProjectsComponent to manage modals and accessible buttons. Additionally, <strong>TooltipModule</strong> adds hover hints in StackComponent and TechnologiesComponent."
+      },
+      "reusable": {
+        "title": "Reusable components",
+        "description": "<strong>TitleComponent</strong> unifies header presentation across sections (Experience, Studies, Stack, Projects). <strong>TechnologiesComponent</strong> receives an array of technologies and a <code>showBackground</code> flag, handles loading failures, applies entrance animations and displays tooltips."
+      },
+      "main": {
+        "title": "Main components",
+        "description": "<strong>ProjectsComponent</strong> organizes projects in a responsive grid, opens details in a modal and applies animations. <strong>StackComponent</strong> offers a tab system and cards with flip effect. <strong>FooterComponent</strong> displays contact links and social networks, as well as a button to copy the email."
+      },
+      "directives": {
+        "title": "Directives and services",
+        "description": "The <strong>AnimationDirective</strong> coordinates appearance animations across multiple components, supported by <strong>AnimationService</strong> and <strong>TechnologiesAnimationService</strong>. The Material theme from PrimeNG, PrimeFlex and custom CSS are used for additional styles."
+      },
+      "architecture": {
+        "title": "Architecture",
+        "description": "Project developed in Angular 17 using standalone components, integrated routes and custom directives to ensure agile maintenance and high scalability."
+      },
+      "license": {
+        "title": "License",
+        "description": "This portfolio is under the <strong>MIT</strong> license.",
+        "permissions": {
+          "title": "Permissions",
+          "items": [
+            "Use, modify and distribute the code",
+            "Use it even commercially",
+            "Create derivative works"
+          ]
+        },
+        "restrictions": {
+          "title": "Single condition",
+          "items": [
+            "You must include the original copyright notice"
+          ]
+        },
+        "note": "You can use this code freely, but <strong>you must keep this license notice</strong> in all copies.<br>© 2025 Eliceo León Moreta. All rights reserved."
+      }
+    },
+    "backHome": "Back to Home"
+  }
+}

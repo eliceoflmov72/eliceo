@@ -1,9 +1,18 @@
 @import "primeicons/primeicons.css";
+@import './styles/animations.css';
+@import './styles/border.css';
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: rgba(18, 18, 18, 0.1);
 }
 
 html,
@@ -12,11 +21,28 @@ body {
     height: 100%;
 }
 
-.my-app-dark {
-    background-color: #121212;
-    color: #eee;
-  }
-  .my-app-dark body {
-    background-color: #121212;
-  }
-  
+.coin-container,
+.menu-item,
+.experience-item,
+.copy-button,
+.toggle-button,
+.project-item,
+.tab-button,
+.card {
+  cursor: pointer;
+}
+
+/* Ocultar scrollbar pero mantener funcionalidad */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Para Firefox */
+* {
+    scrollbar-width: none;
+}
+
+/* Para IE y Edge */
+* {
+    -ms-overflow-style: none;
+}

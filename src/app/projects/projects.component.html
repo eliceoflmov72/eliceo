@@ -1,1 +1,65 @@
-<p>projects works!</p>
+<div class="projects-container">
+  <div class="projects-grid">
+    <div class="project-item semi-transparent-border semi-transparent-border--md semi-transparent-border--hover"
+      *ngFor="let project of projects; let i = index" (click)="toggleActive(project)" [attr.data-project]="project.name"
+      appAnimate [animationType]="'scale-in'"
+      [animationOptions]="{ rootMargin: '-50px', delay: i * 100 }" [elementId]="'project-' + i">
+      <div class="image-container">
+        <img [src]="project.image" [alt]="project.name" loading="lazy">
+      </div>
+      <div class="project-name">
+        <span>{{ project.name }}</span>
+      </div>
+    </div>
+  </div>
+
+  <p-dialog [(visible)]="displayModal" 
+            [modal]="true" 
+            [draggable]="false" 
+            [resizable]="false" 
+            (onHide)="closeDetails()" 
+            [header]="selectedProject?.name" 
+            [closable]="true"
+            [closeOnEscape]="true" 
+            [transitionOptions]="'300ms cubic-bezier(0.4, 0, 0.2, 1)'">
+    
+    @if (selectedProject) {
+      <div class="project-details-container">
+      <div class="project-details-body">
+        <div class="project-details-image-container">
+        <img [src]="selectedProject.image" [alt]="selectedProject.name" class="project-details-image">
+        </div>
+
+        <div class="project-details-info">
+        <div class="project-actions">
+          <a [href]="selectedProject.link || '#'" 
+           target="_blank" 
+           class="project-link"
+           [class.project-link--active]="selectedProject.active" 
+           [class.project-link--private]="selectedProject.private"
+           (click)="handleLinkClick($event, selectedProject)"
+           [pTooltip]="selectedProject.private ? ('projects.status.privateTooltip' | translate) : ''" 
+           tooltipPosition="top"
+           [showDelay]="100" 
+           [hideDelay]="100">
+          <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+            @if (selectedProject.private) {
+            <span>{{ 'projects.status.private' | translate }}</span>
+            } @else if (!selectedProject.private && !selectedProject.link) {
+            <span>{{ 'projects.status.noLink' | translate }}</span>
+            } @else if (!selectedProject.private && selectedProject.link && !selectedProject.active) {
+            <span>{{ 'projects.status.inactive' | translate }}</span>
+            } @else if (!selectedProject.private && selectedProject.link && selectedProject.active) {
+            <span>{{ 'projects.status.active' | translate }}</span>
+            }
+          </a>
+        </div>
+        
+        <div class="project-description" [innerHTML]="selectedProject.description"></div>
+        <app-technologies [technologies]="selectedProject.technologies"></app-technologies>
+        </div>
+      </div>
+      </div>
+    }
+  </p-dialog>
+</div>

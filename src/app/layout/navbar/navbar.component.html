@@ -1,0 +1,24 @@
+<div class="sidebar" [class.scrolled]="isIconMode" [class.collapsed]="isCollapsed">
+  @if (isIconMode) {
+    <button class="toggle-button" (click)="toggleNavbar()">
+      <i class="pi" [class.pi-angle-left]="!isCollapsed" [class.pi-angle-right]="isCollapsed"></i>
+    </button>
+  }
+  <div class="menu-container" #menuContainer>
+    <div class="sliding-background"
+         [style.left.px]="slidingBackgroundLeft"
+         [style.width.px]="slidingBackgroundWidth"></div>
+    <div class="menu-center-indicator"></div>
+    <div class="menu-item"
+         *ngFor="let item of menuItems; let i = index"
+         [class.active]="i === activeIndex"
+         (click)="setActive(i)"
+         [pTooltip]="item | translate"
+         tooltipPosition="bottom">
+      <div class="item-content">
+        <i [class]="getItemIcon(i)" [class.hide]="!isIconMode"></i>
+        <span class="item-text" [class.hide]="isIconMode">{{ item | translate }}</span>
+      </div>
+    </div>
+  </div>
+</div>

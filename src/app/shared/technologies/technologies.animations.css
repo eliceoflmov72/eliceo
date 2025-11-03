@@ -1,0 +1,35 @@
+/* Animaciones para el componente de tecnologías */
+
+/* Estado inicial de los iconos de tecnología */
+.technology-icon {
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+}
+
+/* Animación de salto cuando el icono es visible */
+.technology-icon.visible {
+  animation: technologyJumpIn 0.5s ease-out forwards;
+}
+
+/* Cuando el icono sale del viewport, reseteamos su estado */
+.technology-icon:not(.visible) {
+  animation: none;
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+}
+
+/* Definición de la animación de salto */
+@keyframes technologyJumpIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+} 
