@@ -10,6 +10,7 @@ import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 export function httpLoaderFactory(http: HttpClient) {
+  // @ts-ignore
   return new TranslateHttpLoader(http, './i18n/', '.json');
 }
 
@@ -24,7 +25,6 @@ export const appConfig: ApplicationConfig = {
       },
       defaultLanguage: 'es',
       useDefaultLang: true,
-      isolate: false,
       extend: true
     }),
     provideRouter(routes),

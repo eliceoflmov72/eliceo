@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Project } from '../shared/interfaces/project.interface';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
@@ -15,7 +15,7 @@ import { TechnologiesComponent } from '../shared/technologies/technologies.compo
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
   standalone: true,
-  imports: [CommonModule, DialogModule, ButtonModule, TooltipModule, AnimationDirective, TranslateModule, TechnologiesComponent]
+  imports: [DialogModule, ButtonModule, TooltipModule, AnimationDirective, TranslateModule, TechnologiesComponent]
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
   projects: Project[] = [];

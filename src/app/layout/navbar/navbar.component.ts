@@ -1,12 +1,12 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, HostListener, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { TooltipModule } from 'primeng/tooltip';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, TooltipModule, TranslateModule],
+  imports: [TooltipModule, TranslateModule],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })

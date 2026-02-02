@@ -6,19 +6,20 @@
   }
   <div class="menu-container" #menuContainer>
     <div class="sliding-background"
-         [style.left.px]="slidingBackgroundLeft"
-         [style.width.px]="slidingBackgroundWidth"></div>
+      [style.left.px]="slidingBackgroundLeft"
+    [style.width.px]="slidingBackgroundWidth"></div>
     <div class="menu-center-indicator"></div>
-    <div class="menu-item"
-         *ngFor="let item of menuItems; let i = index"
-         [class.active]="i === activeIndex"
-         (click)="setActive(i)"
-         [pTooltip]="item | translate"
-         tooltipPosition="bottom">
-      <div class="item-content">
-        <i [class]="getItemIcon(i)" [class.hide]="!isIconMode"></i>
-        <span class="item-text" [class.hide]="isIconMode">{{ item | translate }}</span>
+    @for (item of menuItems; track item; let i = $index) {
+      <div class="menu-item"
+        [class.active]="i === activeIndex"
+        (click)="setActive(i)"
+        [pTooltip]="item | translate"
+        tooltipPosition="bottom">
+        <div class="item-content">
+          <i [class]="getItemIcon(i)" [class.hide]="!isIconMode"></i>
+          <span class="item-text" [class.hide]="isIconMode">{{ item | translate }}</span>
+        </div>
       </div>
-    </div>
+    }
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { AnimationDirective } from '../shared/directives/animation.directive';
 import { AnimationService } from '../shared/services/animation.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -7,7 +7,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-studies',
   standalone: true,
-  imports: [CommonModule, AnimationDirective, TranslateModule],
+  imports: [AnimationDirective, TranslateModule],
   templateUrl: './studies.component.html',
   styleUrls: ['./studies.component.css']
 })

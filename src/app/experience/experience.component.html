@@ -1,26 +1,27 @@
 <div class="experience-container">
-  <div class="experience-item" 
-       *ngFor="let experience of experiences; let i = index" 
-       [style.background-image]="'url(' + experience.imageUrl + ')'"
-       [class.expanded]="expandedIndex === i"
-       (click)="toggleExperience(i)"
-       appAnimate
-       [animationType]="'scale-in'"
-       [animationOptions]="{ rootMargin: '-50px', delay: i * 100 }"
-       [elementId]="'experience-' + i">
-    <div class="experience-gradient"></div>
-    <div class="experience-content">
-      <h3 class="experience-title">{{ experience.title }}</h3>
-      <h4 class="experience-position">{{ experience.position }}</h4>
-      <div class="experience-description-container" [class.expanded]="expandedIndex === i">
-        <p class="experience-description">{{ experience.description }}</p>
-        @if (expandedIndex === i) {
-          <app-technologies 
-            [technologies]="experience.technologies"
-            [showBackground]="false">
-          </app-technologies>
-        }
+  @for (experience of experiences; track experience; let i = $index) {
+    <div class="experience-item"
+      [style.background-image]="'url(' + experience.imageUrl + ')'"
+      [class.expanded]="expandedIndex === i"
+      (click)="toggleExperience(i)"
+      appAnimate
+      [animationType]="'scale-in'"
+      [animationOptions]="{ rootMargin: '-50px', delay: i * 100 }"
+      [elementId]="'experience-' + i">
+      <div class="experience-gradient"></div>
+      <div class="experience-content">
+        <h3 class="experience-title">{{ experience.title }}</h3>
+        <h4 class="experience-position">{{ experience.position }}</h4>
+        <div class="experience-description-container" [class.expanded]="expandedIndex === i">
+          <p class="experience-description">{{ experience.description }}</p>
+          @if (expandedIndex === i) {
+            <app-technologies
+              [technologies]="experience.technologies"
+              [showBackground]="false">
+            </app-technologies>
+          }
+        </div>
       </div>
     </div>
-  </div>
+  }
 </div>

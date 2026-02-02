@@ -1,32 +1,31 @@
 <div class="studies-container">
-  <div class="study-card" *ngFor="let study of studies; let i = index"
-       appAnimate
-       [animationType]="'scale-in'"
-       [animationOptions]="{ rootMargin: '-50px', delay: i * 100 }"
-       [elementId]="'study-' + i">
-
-    <div class="study-header">
-      <h3>{{ 'studies.' + study.key + '.title' | translate }}</h3>
-      <span class="period">{{ 'studies.' + study.key + '.period' | translate }}</span>
+  @for (study of studies; track study; let i = $index) {
+    <div class="study-card"
+      appAnimate
+      [animationType]="'scale-in'"
+      [animationOptions]="{ rootMargin: '-50px', delay: i * 100 }"
+      [elementId]="'study-' + i">
+      <div class="study-header">
+        <h3>{{ 'studies.' + study.key + '.title' | translate }}</h3>
+        <span class="period">{{ 'studies.' + study.key + '.period' | translate }}</span>
+      </div>
+      <div class="institution">{{ 'studies.' + study.key + '.institution' | translate }}</div>
+      <p class="description">{{ 'studies.' + study.key + '.description' | translate }}</p>
+      <div class="achievements">
+        <h4>{{ 'studies.achievements' | translate }}</h4>
+        <ul>
+          @for (achievement of 'studies.' + study.key + '.achievements' | translate; track achievement) {
+            <li>{{ achievement }}</li>
+          }
+        </ul>
+      </div>
+      @if (study.moreInfoLink) {
+        <a [href]="study.moreInfoLink"
+          target="_blank"
+          class="certificate">
+          {{ 'studies.' + study.key + '.moreInfo' | translate }}
+        </a>
+      }
     </div>
-
-    <div class="institution">{{ 'studies.' + study.key + '.institution' | translate }}</div>
-    <p class="description">{{ 'studies.' + study.key + '.description' | translate }}</p>
-
-    <div class="achievements">
-      <h4>{{ 'studies.achievements' | translate }}</h4>
-      <ul>
-        <li *ngFor="let achievement of 'studies.' + study.key + '.achievements' | translate">{{ achievement }}</li>
-      </ul>
-    </div>
-
-    @if (study.moreInfoLink) {
-      <a [href]="study.moreInfoLink"
-       target="_blank"
-       class="certificate">
-      {{ 'studies.' + study.key + '.moreInfo' | translate }}
-      </a>
-    }
-
-  </div>
+  }
 </div>

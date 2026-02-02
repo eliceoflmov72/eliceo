@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
-import { TooltipModule } from 'primeng/tooltip';
+import { Tooltip } from 'primeng/tooltip';
 import { StorageService } from './shared/services/storage.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterModule,
     CommonModule,
+    RouterModule,
     TranslateModule,
-    TooltipModule
+    Tooltip
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

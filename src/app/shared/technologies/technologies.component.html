@@ -1,15 +1,17 @@
 <div class="technologies-container" #technologiesContainer [class.with-background]="showBackground">
-  <div class="technology-icon" *ngFor="let tech of technologies; let i = index" [pTooltip]="tech.toUpperCase()"
-    tooltipPosition="bottom" [style.animation-delay]="i * 0.1 + 's'" [class.visible]="isVisible">
-    @if (!imageLoaded[tech]) {
-    <ng-container>
-      <div class="error-icon">!</div>
-    </ng-container>
-    } @else {
-    <ng-container *ngTemplateOutlet="imageTemplate"></ng-container>
-    }
-    <ng-template #imageTemplate>
-      <img [src]="getImagePath(tech)" [alt]="tech" />
-    </ng-template>
-  </div>
+  @for (tech of technologies; track tech; let i = $index) {
+    <div class="technology-icon" [pTooltip]="tech.toUpperCase()"
+      tooltipPosition="bottom" [style.animation-delay]="i * 0.1 + 's'" [class.visible]="isVisible">
+      @if (!imageLoaded[tech]) {
+        <ng-container>
+          <div class="error-icon">!</div>
+        </ng-container>
+      } @else {
+        <ng-container *ngTemplateOutlet="imageTemplate"></ng-container>
+      }
+      <ng-template #imageTemplate>
+        <img [src]="getImagePath(tech)" [alt]="tech" />
+      </ng-template>
+    </div>
+  }
 </div>

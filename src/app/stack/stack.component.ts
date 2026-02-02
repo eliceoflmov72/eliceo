@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { AnimationDirective } from '../shared/directives/animation.directive';
 import { AnimationService } from '../shared/services/animation.service';
 import { TooltipModule } from 'primeng/tooltip';
@@ -19,7 +19,7 @@ interface StackType {
 @Component({
   selector: 'app-stack',
   standalone: true,
-  imports: [CommonModule, AnimationDirective, TooltipModule, TranslateModule],
+  imports: [AnimationDirective, TooltipModule, TranslateModule],
   templateUrl: './stack.component.html',
   styleUrl: './stack.component.css'
 })

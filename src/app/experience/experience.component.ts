@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { TechnologiesComponent } from '../shared/technologies/technologies.component';
 import { AnimationDirective } from '../shared/directives/animation.directive';
 import { AnimationService } from '../shared/services/animation.service';
@@ -17,7 +17,7 @@ interface Experience {
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [CommonModule, TechnologiesComponent, AnimationDirective, TranslateModule],
+  imports: [TechnologiesComponent, AnimationDirective, TranslateModule],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css',
 })

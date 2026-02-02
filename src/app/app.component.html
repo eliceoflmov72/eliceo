@@ -3,24 +3,24 @@
 <!-- Language Selector -->
 <div class="language-selector-container">
   <div class="language-selector">
-    <div class="current-language" 
-         pTooltip="{{ getLanguageName(currentLanguage) }}" 
-         tooltipPosition="left">
+    <div class="current-language"
+      pTooltip="{{ getLanguageName(currentLanguage) }}"
+      tooltipPosition="left">
       <img [src]="getCurrentLanguageFlag()" [alt]="getLanguageName(currentLanguage)">
     </div>
-    
+
     <div class="language-options">
-      <ng-container *ngFor="let lang of languages">
+      @for (lang of languages; track lang) {
         @if (lang.code !== currentLanguage) {
           <div class="language-option"
-               (click)="changeLanguage(lang.code)"
-               [class.active]="currentLanguage === lang.code"
-               pTooltip="{{ getLanguageName(lang.code) }}"
-               tooltipPosition="left">
+            (click)="changeLanguage(lang.code)"
+            [class.active]="currentLanguage === lang.code"
+            pTooltip="{{ getLanguageName(lang.code) }}"
+            tooltipPosition="left">
             <img [src]="lang.flag" [alt]="getLanguageName(lang.code)">
           </div>
         }
-      </ng-container>
+      }
     </div>
   </div>
 </div>

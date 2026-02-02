@@ -1,58 +1,61 @@
 <!-- info.component.html -->
 <div class="info-container">
-    <h1>{{ 'info.title' | translate }}</h1>
-  
-    <section class="section">
-      <h2>{{ 'info.sections.primeng.title' | translate }}</h2>
-      <p [innerHTML]="'info.sections.primeng.description' | translate"></p>
-    </section>
-  
-    <section class="section">
-      <h2>{{ 'info.sections.reusable.title' | translate }}</h2>
-      <p [innerHTML]="'info.sections.reusable.description' | translate"></p>
-    </section>
-  
-    <section class="section">
-      <h2>{{ 'info.sections.main.title' | translate }}</h2>
-      <p [innerHTML]="'info.sections.main.description' | translate"></p>
-    </section>
-  
-    <section class="section">
-      <h2>{{ 'info.sections.directives.title' | translate }}</h2>
-      <p [innerHTML]="'info.sections.directives.description' | translate"></p>
-    </section>
-  
-    <section class="section">
-      <h2>{{ 'info.sections.architecture.title' | translate }}</h2>
-      <p [innerHTML]="'info.sections.architecture.description' | translate"></p>
-    </section>
+  <h1>{{ 'info.title' | translate }}</h1>
 
-    <section class="section license-section">
-      <h2>{{ 'info.sections.license.title' | translate }}</h2>
-      <div class="license-content">
-        <p [innerHTML]="'info.sections.license.description' | translate"></p>
-        <div class="license-details">
-          <div class="permissions">
-            <h3>{{ 'info.sections.license.permissions.title' | translate }}</h3>
-            <div class="permission-item" style="display: flex; align-items: center; gap: 0.5rem;" *ngFor="let item of 'info.sections.license.permissions.items' | translate">
+  <section class="section">
+    <h2>{{ 'info.sections.primeng.title' | translate }}</h2>
+    <p [innerHTML]="'info.sections.primeng.description' | translate"></p>
+  </section>
+
+  <section class="section">
+    <h2>{{ 'info.sections.reusable.title' | translate }}</h2>
+    <p [innerHTML]="'info.sections.reusable.description' | translate"></p>
+  </section>
+
+  <section class="section">
+    <h2>{{ 'info.sections.main.title' | translate }}</h2>
+    <p [innerHTML]="'info.sections.main.description' | translate"></p>
+  </section>
+
+  <section class="section">
+    <h2>{{ 'info.sections.directives.title' | translate }}</h2>
+    <p [innerHTML]="'info.sections.directives.description' | translate"></p>
+  </section>
+
+  <section class="section">
+    <h2>{{ 'info.sections.architecture.title' | translate }}</h2>
+    <p [innerHTML]="'info.sections.architecture.description' | translate"></p>
+  </section>
+
+  <section class="section license-section">
+    <h2>{{ 'info.sections.license.title' | translate }}</h2>
+    <div class="license-content">
+      <p [innerHTML]="'info.sections.license.description' | translate"></p>
+      <div class="license-details">
+        <div class="permissions">
+          <h3>{{ 'info.sections.license.permissions.title' | translate }}</h3>
+          @for (item of 'info.sections.license.permissions.items' | translate; track item) {
+            <div class="permission-item" style="display: flex; align-items: center; gap: 0.5rem;">
               <i class="pi pi-check-circle" style="display: flex; align-items: center; color: #22c55e;"></i>
               <span>{{ item }}</span>
             </div>
-          </div>
-          
-          <div class="restrictions">
-            <h3>{{ 'info.sections.license.restrictions.title' | translate }}</h3>
-            <div class="restriction-item" style="display: flex; align-items: center; gap: 0.5rem;" *ngFor="let item of 'info.sections.license.restrictions.items' | translate">
+          }
+        </div>
+
+        <div class="restrictions">
+          <h3>{{ 'info.sections.license.restrictions.title' | translate }}</h3>
+          @for (item of 'info.sections.license.restrictions.items' | translate; track item) {
+            <div class="restriction-item" style="display: flex; align-items: center; gap: 0.5rem;">
               <i class="pi pi-info-circle" style="display: flex; align-items: center; color: #3b82f6;"></i>
               <span>{{ item }}</span>
             </div>
-          </div>
+          }
         </div>
-        <p class="license-note" [innerHTML]="'info.sections.license.note' | translate"></p>
       </div>
-    </section>
+      <p class="license-note" [innerHTML]="'info.sections.license.note' | translate"></p>
+    </div>
+  </section>
 
-    <button class="home-button" routerLink="/">{{ 'info.backHome' | translate }}</button>
+  <button class="home-button" routerLink="/">{{ 'info.backHome' | translate }}</button>
 
-  </div>
-  
+</div>
