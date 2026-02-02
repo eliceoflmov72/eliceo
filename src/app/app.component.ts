@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-
+import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
-import { Tooltip } from 'primeng/tooltip';
+import { TooltipModule } from 'primeng/tooltip';
 import { StorageService } from './shared/services/storage.service';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -13,14 +13,15 @@ import { StorageService } from './shared/services/storage.service';
     CommonModule,
     RouterModule,
     TranslateModule,
-    Tooltip
+    TooltipModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Eliceo';
   currentLanguage = 'es';
+  showLanguageSelector = true;
 
   languages = [
     { code: 'es', name: 'Español', flag: 'flags/spanish.png' },
@@ -29,13 +30,22 @@ export class AppComponent {
 
   constructor(
     private translate: TranslateService,
-    private storageService: StorageService
+    private storageService: StorageService,
+    private router: Router
   ) {
     // Set default language
     translate.setDefaultLang('es');
     
     // Initialize language
     this.initializeLanguage();
+  }
+
+  ngOnInit() {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: any) => {
+      this.showLanguageSelector = !event.urlAfterRedirects.includes('/zflow');
+    });
   }
 
   private async initializeLanguage(): Promise<void> {

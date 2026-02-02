@@ -7,25 +7,19 @@ import { routes } from './app.routes';
 import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
-export function httpLoaderFactory(http: HttpClient) {
-  // @ts-ignore
-  return new TranslateHttpLoader(http, './i18n/', '.json');
-}
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(withInterceptorsFromDi()),
     provideTranslateService({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: httpLoaderFactory,
-        deps: [HttpClient],
-      },
       defaultLanguage: 'es',
       useDefaultLang: true,
       extend: true
+    }),
+    provideTranslateHttpLoader({
+      prefix: './i18n/',
+      suffix: '.json'
     }),
     provideRouter(routes),
     provideAnimationsAsync(),
