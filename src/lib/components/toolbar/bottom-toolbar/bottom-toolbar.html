@@ -1,0 +1,28 @@
+<toolbar variant="semi-rounded" position="bottom-right">
+  <button (click)="rotateLeft.emit()" title="Rotar Izquierda (-45°)">
+    <div
+      class="ff-icon"
+      style="width: 18px; height: 18px; mask-image: url(/icons/rotate-left.svg)"
+    ></div>
+  </button>
+  <span class="ff-zoom-label" style="min-width: 45px">{{ currentRotationLabel() }}</span>
+  <button (click)="rotateRight.emit()" title="Rotar Derecha (+45°)">
+    <div
+      class="ff-icon"
+      style="width: 18px; height: 18px; mask-image: url(/icons/rotate-right.svg)"
+    ></div>
+  </button>
+  <div class="ff-divider-v"></div>
+  <button (click)="zoomOut.emit()" title="Alejar">-</button>
+  <span class="ff-zoom-label">{{ zoomLabel() }}%</span>
+  <button (click)="zoomIn.emit()" title="Acercar">+</button>
+  <div class="ff-divider-v"></div>
+  <button
+    (click)="toggleStats.emit()"
+    [class.active]="showStats()"
+    title="Mostrar Estadísticas de Rendimiento"
+  >
+    FPS
+  </button>
+  <button (click)="resetView.emit()" title="Ajustar Vista">R</button>
+</toolbar>

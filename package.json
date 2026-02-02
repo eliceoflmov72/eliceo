@@ -1,0 +1,24 @@
+{
+  "name": "zflow",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "cd ../.. && ng build zflow",
+    "watch": "cd ../.. && ng build zflow --watch --configuration development"
+  },
+  "peerDependencies": {
+    "@angular/common": "21.1.0",
+    "@angular/core": "21.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@webgpu/types": "^0.1.69"
+  },
+  "files": [
+    "dist",
+    "public",
+    "README.md"
+  ],
+  "sideEffects": false
+}
