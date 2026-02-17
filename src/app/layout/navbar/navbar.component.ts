@@ -180,16 +180,16 @@ export class NavbarComponent implements AfterViewInit, OnInit, OnDestroy {
 
   private handleModeChange() {
     this.updateMode();
-    // Use a series of updates to ensure the background follows the layout shift perfectly
     this.ngZone.run(() => {
-      this.updateSlidingBackground();
-      const updates = [50, 100, 200, 300, 450];
-      updates.forEach((delay) => {
-        setTimeout(() => {
-          this.updateSlidingBackground();
-          this.cdr.detectChanges();
-        }, delay);
-      });
+      // High frequency updates during the first 400ms of transition
+      let start = performance.now();
+      const update = () => {
+        this.updateSlidingBackground();
+        if (performance.now() - start < 450) {
+          requestAnimationFrame(update);
+        }
+      };
+      requestAnimationFrame(update);
     });
   }
 
