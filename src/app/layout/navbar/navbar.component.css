@@ -6,7 +6,7 @@
   z-index: 1000;
   display: flex;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, left 0.3s ease, top 0.3s ease;
 }
 
 .menu-container {
@@ -20,10 +20,14 @@
   border-radius: 25px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              width 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              padding 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              gap 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              background 0.3s ease;
   overflow: hidden;
   width: auto;
-  will-change: transform, width, padding;
+  will-change: transform, width, gap;
 }
 
 .sliding-background {
@@ -35,27 +39,32 @@
   z-index: 0;
   opacity: 0;
   top: 50%;
-  transform: translateY(-50%) translateX(-200%);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  left: 0;
+  transform: translateY(-50%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 0 15px rgba(0, 123, 255, 0.2);
+  will-change: transform, width;
 }
 
 .sliding-background.animate {
   opacity: 0.15;
-  transform: translateY(-50%) translateX(0);
+  top: 50%;
+  margin-top: -17.5px; /* Half of height 35px */
 }
 
 .sidebar.scrolled {
   left: 1rem;
-  transform: none;
+  transform: translateX(0);
 }
 
 .sidebar.scrolled .menu-container {
   transform-origin: left center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform, width, padding;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              left 0.3s ease;
 }
 
 .sidebar.scrolled.collapsed .menu-container {
@@ -75,8 +84,8 @@
 }
 
 .sidebar.scrolled.collapsed .menu-item {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   padding: 0;
 }
 
@@ -89,14 +98,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.3s ease,
+              width 0.3s ease,
+              height 0.3s ease;
   border-radius: 12px;
   overflow: hidden;
   padding: 0.4rem 0.6rem;
   min-width: 35px;
   height: 35px;
   z-index: 1;
-  will-change: transform, width, height;
+  will-change: transform;
 }
 
 .sidebar.scrolled .menu-item {
@@ -123,7 +135,7 @@
   color: var(--text-color, #333);
   font-weight: 500;
   font-size: 1em;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,14 +143,16 @@
   height: 100%;
   white-space: nowrap;
   padding: 0 0.5rem;
-  will-change: transform, opacity;
+  will-change: transform;
 }
 
 .item-content i {
+  position: absolute;
   font-size: 1.2em;
   opacity: 0;
-  transform: scale(0.8);
-  transition: all 0.3s ease;
+  transform: scale(0.5);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,29 +161,29 @@
   line-height: 1;
 }
 
-.item-content i.hide {
-  display: none;
-}
-
-.item-content i:not(.hide) {
+.sidebar.scrolled .item-content i {
   opacity: 1;
   transform: scale(1);
 }
 
 .item-text {
   opacity: 1;
-  transform: translateX(0);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.3s ease, 
+              width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              margin 0.3s ease;
   white-space: nowrap;
-  will-change: transform, opacity, width;
+  display: inline-block;
+  will-change: transform, opacity;
 }
 
-.item-text.hide {
+.sidebar.scrolled .item-text {
   opacity: 0;
-  transform: translateX(-10px);
+  transform: scale(0.8) translateX(-10px);
   width: 0;
   margin: 0;
-  padding: 0;
+  pointer-events: none;
 }
 
 .menu-item:hover .item-content {
@@ -191,16 +205,15 @@
   height: 3px;
   background: var(--primary-color, #007bff);
   border-radius: 2px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
-  opacity: 0;
-  transform: scaleX(0);
+  opacity: 1;
+  transform: translateX(0) scaleX(0);
+  will-change: transform, opacity;
+  pointer-events: none;
 }
 
-.menu-item.active .menu-center-indicator {
-  opacity: 1;
-  transform: scaleX(1);
-}
+/* Indicators are now controlled via bindings */
 
 .sidebar.scrolled .menu-center-indicator {
   width: 20px;
@@ -243,19 +256,7 @@
 }
 
 /* Efecto de brillo en el indicador activo */
-.menu-item.active::after {
-  content: '';
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  width: 6px;
-  height: 6px;
-  background: var(--primary-color, #007bff);
-  border-radius: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
-  animation: pulse 2s infinite;
-}
+/* Pulse animation removed to avoid double shadows */
 
 @keyframes pulse {
   0% {

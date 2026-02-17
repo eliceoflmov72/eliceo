@@ -69,11 +69,9 @@ export class NavbarComponent implements AfterViewInit, OnInit, OnDestroy {
 
     requestAnimationFrame(() => {
       this.updateSlidingBackground();
-      this.updateIndicatorPosition();
       this.checkActiveSection();
       setTimeout(() => {
         this.updateSlidingBackground();
-        this.updateIndicatorPosition();
       }, 100);
     });
   }
@@ -114,7 +112,6 @@ export class NavbarComponent implements AfterViewInit, OnInit, OnDestroy {
     if (index < 0 || index >= this.menuItems.length) return;
     this.activeIndex = index;
     this.updateSlidingBackground();
-    this.updateIndicatorPosition();
     const section = this.sectionTitles[index];
     if (section) {
       window.scrollTo({
@@ -131,34 +128,13 @@ export class NavbarComponent implements AfterViewInit, OnInit, OnDestroy {
     ) as HTMLElement;
     if (!active || !bg) return;
 
-    const containerRect =
-      this.menuContainer.nativeElement.getBoundingClientRect();
-    const itemRect = active.getBoundingClientRect();
-
-    this.slidingBackgroundLeft = itemRect.left - containerRect.left;
-    this.slidingBackgroundWidth = this.isIconMode
-      ? window.innerWidth < 750
-        ? 35
-        : 40
-      : itemRect.width;
+    this.slidingBackgroundLeft = active.offsetLeft;
+    this.slidingBackgroundWidth = active.offsetWidth;
 
     // We only need to add the animate class, the [style] bindings in HTML handle the rest
     if (!bg.classList.contains('animate')) {
       requestAnimationFrame(() => bg.classList.add('animate'));
     }
-  }
-
-  private updateIndicatorPosition() {
-    const ind = this.menuContainer.nativeElement.querySelector(
-      '.menu-center-indicator',
-    ) as HTMLElement;
-    const active = this.menuItemsElements[this.activeIndex];
-    if (!ind || !active) return;
-
-    const containerRect =
-      this.menuContainer.nativeElement.getBoundingClientRect();
-    const itemRect = active.getBoundingClientRect();
-    ind.style.left = `${itemRect.left - containerRect.left}px`;
   }
 
   private checkActiveSection() {
@@ -183,7 +159,6 @@ export class NavbarComponent implements AfterViewInit, OnInit, OnDestroy {
       this.ngZone.run(() => {
         this.activeIndex = bestIdx;
         this.updateSlidingBackground();
-        this.updateIndicatorPosition();
         this.cdr.detectChanges();
       });
     }
@@ -205,15 +180,17 @@ export class NavbarComponent implements AfterViewInit, OnInit, OnDestroy {
 
   private handleModeChange() {
     this.updateMode();
-    const bg = document.querySelector('.sliding-background') as HTMLElement;
-    if (!bg) return;
-    bg.classList.remove('animate');
-    bg.style.transition = 'none';
-    bg.offsetHeight;
-    setTimeout(() => {
-      bg.style.transition = '';
+    // Use a series of updates to ensure the background follows the layout shift perfectly
+    this.ngZone.run(() => {
       this.updateSlidingBackground();
-    }, 300);
+      const updates = [50, 100, 200, 300, 450];
+      updates.forEach((delay) => {
+        setTimeout(() => {
+          this.updateSlidingBackground();
+          this.cdr.detectChanges();
+        }, delay);
+      });
+    });
   }
 
   private onScrollInternal() {
@@ -236,7 +213,6 @@ export class NavbarComponent implements AfterViewInit, OnInit, OnDestroy {
     this.ngZone.run(() => {
       this.handleModeChange();
       this.updateSlidingBackground();
-      this.updateIndicatorPosition();
       this.cdr.detectChanges();
     });
   }
@@ -249,7 +225,9 @@ export class NavbarComponent implements AfterViewInit, OnInit, OnDestroy {
   toggleNavbar() {
     if (!this.isIconMode) return;
     this.isCollapsed = !this.isCollapsed;
-    setTimeout(() => this.updateSlidingBackground(), 300);
+    this.ngZone.run(() => {
+      setTimeout(() => this.updateSlidingBackground(), 300);
+    });
   }
 
   ngOnDestroy() {
