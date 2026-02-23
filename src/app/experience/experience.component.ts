@@ -5,7 +5,6 @@ import { AnimationDirective } from '../shared/directives/animation.directive';
 import { AnimationService } from '../shared/services/animation.service';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { Renderer2 } from '@angular/core';
 import { CloseOnScrollDirective } from '../shared/directives/close-on-scroll.directive';
 
 interface Experience {
@@ -16,6 +15,7 @@ interface Experience {
   technologies: string[];
   color: string;
   isDark: boolean;
+  tintIntensity: string;
 }
 
 @Component({
@@ -38,7 +38,6 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   constructor(
     private animationService: AnimationService,
     private translate: TranslateService,
-    private renderer: Renderer2,
   ) {
     this.langChangeSubscription = this.translate.onLangChange.subscribe(() => {
       this.loadExperiences();
@@ -53,15 +52,6 @@ export class ExperienceComponent implements OnInit, OnDestroy {
     if (this.langChangeSubscription) {
       this.langChangeSubscription.unsubscribe();
     }
-    this.clearBackground();
-  }
-
-  private clearBackground() {
-    this.renderer.setStyle(document.body, 'background-image', 'none');
-    this.renderer.removeStyle(document.body, 'background-size');
-    this.renderer.removeStyle(document.body, 'background-position');
-    this.renderer.removeStyle(document.body, 'background-attachment');
-    this.renderer.removeStyle(document.body, 'background-repeat');
   }
 
   private loadExperiences() {
@@ -87,6 +77,7 @@ export class ExperienceComponent implements OnInit, OnDestroy {
         ],
         color: '#000837',
         isDark: true,
+        tintIntensity: '30%',
       },
       {
         title: this.translate.instant('experience.dialogo.title'),
@@ -104,6 +95,7 @@ export class ExperienceComponent implements OnInit, OnDestroy {
         ],
         color: '#AEC634',
         isDark: false,
+        tintIntensity: '12%',
       },
     ];
   }
@@ -111,27 +103,8 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   toggleExperience(index: number | null) {
     if (index === null || this.expandedIndex === index) {
       this.expandedIndex = null;
-      this.clearBackground();
     } else {
       this.expandedIndex = index;
-      const experience = this.experiences[index];
-      this.setBackground(experience.imageUrl, experience.isDark);
     }
-  }
-
-  private setBackground(imageUrl: string, isDark: boolean) {
-    const overlay = isDark
-      ? 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))'
-      : 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8))';
-
-    this.renderer.setStyle(
-      document.body,
-      'background-image',
-      `${overlay}, url(${imageUrl})`,
-    );
-    this.renderer.setStyle(document.body, 'background-size', 'cover');
-    this.renderer.setStyle(document.body, 'background-position', 'center');
-    this.renderer.setStyle(document.body, 'background-attachment', 'fixed');
-    this.renderer.setStyle(document.body, 'background-repeat', 'no-repeat');
   }
 }

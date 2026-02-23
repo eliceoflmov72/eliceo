@@ -4,6 +4,7 @@
       [style.background-image]="expandedIndex === i ? 'url(' + experience.imageUrl + ')' : 'none'"
       [style.--item-color]="experience.color"
       [style.--contrast-color]="experience.isDark ? 'white' : 'black'"
+      [style.--tint-intensity]="experience.tintIntensity"
       [class.expanded]="expandedIndex === i"
       (click)="toggleExperience(i)"
       appAnimate

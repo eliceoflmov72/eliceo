@@ -17,8 +17,8 @@
   position: relative;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  /* Marco suave tintado con el color de la empresa */
-  background-color: color-mix(in srgb, var(--item-color) 8%, white);
+  /* Marco tintado con intensidad adaptativa */
+  background-color: color-mix(in srgb, var(--item-color) var(--tint-intensity), white);
   will-change: transform, opacity;
   display: flex;
   align-items: flex-start;
