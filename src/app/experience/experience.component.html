@@ -1,13 +1,17 @@
 <div class="experience-container">
   @for (experience of experiences; track experience; let i = $index) {
     <div class="experience-item"
-      [style.background-image]="'url(' + experience.imageUrl + ')'"
+      [style.background-image]="expandedIndex === i ? 'url(' + experience.imageUrl + ')' : 'none'"
+      [style.--item-color]="experience.color"
+      [style.--contrast-color]="experience.isDark ? 'white' : 'black'"
       [class.expanded]="expandedIndex === i"
       (click)="toggleExperience(i)"
       appAnimate
       [animationType]="'scale-in'"
       [animationOptions]="{ rootMargin: '-50px', delay: i * 100 }"
-      [elementId]="'experience-' + i">
+      [elementId]="'experience-' + i"
+      [appCloseOnScroll]="expandedIndex === i"
+      (closeOnScroll)="toggleExperience(null)">
       <div class="experience-gradient"></div>
       <div class="experience-content">
         <h3 class="experience-title">{{ experience.title }}</h3>

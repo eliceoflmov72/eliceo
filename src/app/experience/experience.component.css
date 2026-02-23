@@ -9,148 +9,179 @@
   }
 
   .experience-item {
-    width: 100%;
-    min-height: 150px;
-    border-radius: 2rem;
-    background-size: 100%;
-    background-position: center;
-    position: relative;
-       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    filter: brightness(1) contrast(1) saturate(1);
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    will-change: transform, opacity;
-    display: flex;
-    align-items: flex-start;
-  }
-  
-
-.experience-item::after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 1.5rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    z-index: 1;
-}
-
-.experience-item.expanded {
-    min-height: 200px;
-    height: auto;
+  width: 100%;
+  min-height: 150px;
+  border-radius: 2rem;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  /* Marco suave tintado con el color de la empresa */
+  background-color: color-mix(in srgb, var(--item-color) 8%, white);
+  will-change: transform, opacity;
+  display: flex;
+  align-items: flex-start;
+  border: none;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
 }
 
 .experience-item:hover {
-    filter: brightness(1.05) contrast(1.05) saturate(1.1);
-    background-size: 102%;
-    transform: translateY(-5px);
+  transform: translateY(-5px);
+  /* Sombra hereda el color de la marca en hover */
+  box-shadow: 0 20px 40px -15px color-mix(in srgb, var(--item-color) 25%, transparent);
+}
+
+/* Interior blanco con margen (Cerrado) */
+.experience-item::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  background-color: white;
+  z-index: 1;
+  border-radius: 1.6rem;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Interior se expande y se vuelve translúcido (Abierto) */
+.experience-item.expanded::after {
+  background-color: color-mix(in srgb, var(--contrast-color) 10%, transparent);
+  backdrop-filter: blur(10px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 2rem;
+}
+
+.experience-item.expanded {
+  min-height: 200px;
+  height: auto;
 }
 
 .experience-gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.1) 30%,
-            rgba(255, 255, 255, 0.2) 40%,
-            rgba(255, 255, 255, 0.3) 60%,
-            rgba(255, 255, 255, 0.4) 80%,
-            rgba(255, 255, 255, 0.5) 100%);
-    mix-blend-mode: overlay;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.1) 30%,
+          rgba(255, 255, 255, 0.2) 40%,
+          rgba(255, 255, 255, 0.3) 60%,
+          rgba(255, 255, 255, 0.4) 80%,
+          rgba(255, 255, 255, 0.5) 100%);
+  mix-blend-mode: overlay;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.experience-item.expanded .experience-gradient {
+  opacity: 1;
 }
 
 .experience-content {
-    width: 100%;
-    position: relative;
-    z-index: 2;
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    align-items: center;
-    transform: translateY(.4em);
-}
-
-.experience-item:not(.expanded) .experience-content {
-    align-items: center;
-}
-
-.experience-item.expanded .experience-content {
-    align-items: flex-start;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 3.5rem 4.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: flex-start; /* Siempre alineado a la izquierda */
 }
 
 .experience-title {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    text-align: left;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--item-color);
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Barra de acento lateral en el título */
+.experience-title::before {
+  content: '';
+  width: 4px;
+  height: 24px;
+  background-color: var(--item-color);
+  border-radius: 2px;
+  transition: all 0.5s ease;
+}
+
+.experience-item.expanded .experience-title {
+  color: var(--contrast-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.experience-item.expanded .experience-title::before {
+  background-color: var(--contrast-color);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--contrast-color) 50%, transparent);
 }
 
 .experience-title, .experience-position, .experience-description-container {
-    margin-block: .5rem;
-}
-
-
-.experience-item.expanded .experience-title,
-.experience-item.expanded .experience-position {
-    text-align: left;
+  margin-block: .5rem;
 }
 
 .experience-position {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    text-align: left;
+  font-size: 1.1rem;
+  color: color-mix(in srgb, var(--item-color) 60%, #444);
+  width: 100%;
+  text-align: left;
+  font-weight: 500;
+  transition: all 0.5s ease;
+  padding-left: calc(4px + 1rem); /* Alineado con el texto del título */
+}
+
+.experience-item.expanded .experience-position {
+  color: color-mix(in srgb, var(--contrast-color) 90%, transparent);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  padding-left: calc(4px + 1rem);
 }
 
 .experience-description-container {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateY(-20px);
-    visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(-20px);
+  visibility: hidden;
+  padding-left: calc(4px + 1rem);
 }
 
 .experience-description-container.expanded {
-    max-height: 1000px;
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    visibility: visible;
+  max-height: 1000px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: visible;
 }
 
 .experience-description {
-    font-size: 0.9rem;
-    margin-block: 0 1rem;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.4;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    white-space: pre-wrap;
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateY(20px);
-    opacity: 0;
+  font-size: 1.05rem;
+  margin-block: 0 1rem;
+  color: var(--contrast-color);
+  opacity: 0.9;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  white-space: pre-wrap;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(20px);
+  opacity: 0;
 }
 
 .experience-description-container.expanded .experience-description {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.experience-item.expanded .experience-title,
-.experience-item.expanded .experience-position {
-    transform: translateX(0);
+  transform: translateY(0);
+  opacity: 1;
 }
