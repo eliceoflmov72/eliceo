@@ -1,61 +1,98 @@
-<!-- info.component.html -->
-<div class="info-container">
-  <h1>{{ 'info.title' | translate }}</h1>
+<div class="info-page" disableRightClick>
+  <div class="info-container">
+    <app-title [title]="'info.title' | translate" appAnimate type="fade"></app-title>
 
-  <section class="section">
-    <h2>{{ 'info.sections.primeng.title' | translate }}</h2>
-    <p [innerHTML]="'info.sections.primeng.description' | translate"></p>
-  </section>
-
-  <section class="section">
-    <h2>{{ 'info.sections.reusable.title' | translate }}</h2>
-    <p [innerHTML]="'info.sections.reusable.description' | translate"></p>
-  </section>
-
-  <section class="section">
-    <h2>{{ 'info.sections.main.title' | translate }}</h2>
-    <p [innerHTML]="'info.sections.main.description' | translate"></p>
-  </section>
-
-  <section class="section">
-    <h2>{{ 'info.sections.directives.title' | translate }}</h2>
-    <p [innerHTML]="'info.sections.directives.description' | translate"></p>
-  </section>
-
-  <section class="section">
-    <h2>{{ 'info.sections.architecture.title' | translate }}</h2>
-    <p [innerHTML]="'info.sections.architecture.description' | translate"></p>
-  </section>
-
-  <section class="section license-section">
-    <h2>{{ 'info.sections.license.title' | translate }}</h2>
-    <div class="license-content">
-      <p [innerHTML]="'info.sections.license.description' | translate"></p>
-      <div class="license-details">
-        <div class="permissions">
-          <h3>{{ 'info.sections.license.permissions.title' | translate }}</h3>
-          @for (item of 'info.sections.license.permissions.items' | translate; track item) {
-            <div class="permission-item" style="display: flex; align-items: center; gap: 0.5rem;">
-              <i class="pi pi-check-circle" style="display: flex; align-items: center; color: #22c55e;"></i>
-              <span>{{ item }}</span>
-            </div>
-          }
+    <div class="info-flex">
+      <section class="info-card" appAnimate type="slideUp">
+        <span class="card-index">01</span>
+        <div class="card-header">
+          <h2>{{ 'info.sections.primeng.title' | translate }}</h2>
         </div>
+        <p [innerHTML]="'info.sections.primeng.description' | translate"></p>
+      </section>
 
-        <div class="restrictions">
-          <h3>{{ 'info.sections.license.restrictions.title' | translate }}</h3>
-          @for (item of 'info.sections.license.restrictions.items' | translate; track item) {
-            <div class="restriction-item" style="display: flex; align-items: center; gap: 0.5rem;">
-              <i class="pi pi-info-circle" style="display: flex; align-items: center; color: #3b82f6;"></i>
-              <span>{{ item }}</span>
-            </div>
-          }
+      <section class="info-card" appAnimate type="slideUp">
+        <span class="card-index">02</span>
+        <div class="card-header">
+          <h2>{{ 'info.sections.reusable.title' | translate }}</h2>
         </div>
-      </div>
-      <p class="license-note" [innerHTML]="'info.sections.license.note' | translate"></p>
+        <p [innerHTML]="'info.sections.reusable.description' | translate"></p>
+      </section>
+
+      <section class="info-card" appAnimate type="slideUp">
+        <span class="card-index">03</span>
+        <div class="card-header">
+          <h2>{{ 'info.sections.main.title' | translate }}</h2>
+        </div>
+        <p [innerHTML]="'info.sections.main.description' | translate"></p>
+      </section>
+
+      <section class="info-card" appAnimate type="slideUp">
+        <span class="card-index">04</span>
+        <div class="card-header">
+          <h2>{{ 'info.sections.directives.title' | translate }}</h2>
+        </div>
+        <p [innerHTML]="'info.sections.directives.description' | translate"></p>
+      </section>
+
+      <section class="info-card" appAnimate type="slideUp">
+        <span class="card-index">05</span>
+        <div class="card-header">
+          <h2>{{ 'info.sections.architecture.title' | translate }}</h2>
+        </div>
+        <p [innerHTML]="'info.sections.architecture.description' | translate"></p>
+      </section>
+
+      <section class="info-card license-card" appAnimate type="slideUp">
+        <div class="card-header">
+          <span class="card-index">MIT</span>
+          <h2>{{ 'info.sections.license.title' | translate }}</h2>
+        </div>
+        <div class="license-content">
+          <p [innerHTML]="'info.sections.license.description' | translate"></p>
+          
+          <div class="license-grid">
+            <div class="license-column">
+              <h3>{{ 'info.sections.license.permissions.title' | translate }}</h3>
+              @for (item of 'info.sections.license.permissions.items' | translate; track item) {
+                <div class="list-item">
+                  <span class="bullet success"></span>
+                  <span>{{ item }}</span>
+                </div>
+              }
+            </div>
+
+            <div class="license-column">
+              <h3>{{ 'info.sections.license.restrictions.title' | translate }}</h3>
+              @for (item of 'info.sections.license.restrictions.items' | translate; track item) {
+                <div class="list-item">
+                  <span class="bullet info"></span>
+                  <span>{{ item }}</span>
+                </div>
+              }
+            </div>
+          </div>
+          
+          <div class="license-note-container">
+            <p class="license-note" [innerHTML]="'info.sections.license.note' | translate"></p>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
 
-  <button class="home-button" routerLink="/">{{ 'info.backHome' | translate }}</button>
+    <div class="actions" appAnimate type="fade">
+      <button class="primary-button" routerLink="/">
+        <i class="pi pi-arrow-left"></i>
+        {{ 'info.backHome' | translate }}
+      </button>
+    </div>
+  </div>
 
+  <!-- Formas grandes animadas -->
+  <div class="large-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+  </div>
 </div>
