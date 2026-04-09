@@ -1,0 +1,31 @@
+<div class="presentacion-page">
+  <div class="presentacion-container">
+    <app-title [title]="'Presentación'"></app-title>
+
+    <div class="cards">
+      <section class="card">
+        <h2>Enlace</h2>
+        <a class="link" [href]="driveUrl" target="_blank" rel="noopener noreferrer">{{ driveUrl }}</a>
+
+        <div class="buttons">
+          <button class="button primary" type="button" (click)="copyLink()">Copiar</button>
+          <a class="button secondary" [href]="driveUrl" target="_blank" rel="noopener noreferrer">Abrir</a>
+        </div>
+
+        @if (copied) {
+          <div class="copied">Enlace copiado</div>
+        }
+      </section>
+
+      <section class="card qr-card">
+        <h2>QR</h2>
+        <img class="qr" [src]="qrImageUrl" alt="Código QR del enlace de presentación" />
+        <p class="hint">Escanea el código para abrir el enlace.</p>
+      </section>
+    </div>
+
+    <div class="actions">
+      <button class="button primary" type="button" routerLink="/">Volver</button>
+    </div>
+  </div>
+</div>

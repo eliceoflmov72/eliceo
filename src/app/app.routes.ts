@@ -6,6 +6,11 @@ import { InfoComponent } from './info/info.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Eliceo León' },
   { path: 'info', component: InfoComponent, title: 'Más información' },
+  {
+    path: 'presentacion',
+    loadComponent: () => import('./presentacion/presentacion.component').then(m => m.PresentacionComponent),
+    title: 'Presentación'
+  },
   { 
     path: 'zflow', 
     loadComponent: () => import('./zflow/zflow.component').then(m => m.ZFlowComponent),
