@@ -1,14 +1,14 @@
 .experience-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
-  }
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
 
-  .experience-item {
+.experience-item {
   width: 100%;
   min-height: 150px;
   border-radius: 2rem;
@@ -17,22 +17,20 @@
   position: relative;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  /* Marco tintado con intensidad adaptativa */
-  background-color: color-mix(in srgb, var(--item-color) var(--tint-intensity), white);
   will-change: transform, opacity;
   display: flex;
   align-items: flex-start;
-  border: none;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
 }
 
 .experience-item:hover {
   transform: translateY(-5px);
-  /* Sombra hereda el color de la marca en hover */
-  box-shadow: 0 20px 40px -15px color-mix(in srgb, var(--item-color) 25%, transparent);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
 }
 
-/* Interior blanco con margen (Cerrado) */
 .experience-item::after {
   content: '';
   position: absolute;
@@ -40,15 +38,14 @@
   left: 12px;
   right: 12px;
   bottom: 12px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.95);
   z-index: 1;
   border-radius: 1.6rem;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Interior se expande y se vuelve translúcido (Abierto) */
 .experience-item.expanded::after {
-  background-color: color-mix(in srgb, var(--contrast-color) 10%, transparent);
+  background-color: rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(10px);
   top: 0;
   left: 0;
@@ -68,14 +65,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 0.1) 30%,
-          rgba(255, 255, 255, 0.2) 40%,
-          rgba(255, 255, 255, 0.3) 60%,
-          rgba(255, 255, 255, 0.4) 80%,
-          rgba(255, 255, 255, 0.5) 100%);
-  mix-blend-mode: overlay;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.32) 45%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
   z-index: 2;
   opacity: 0;
   transition: opacity 0.8s ease;
@@ -94,13 +89,13 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  align-items: flex-start; /* Siempre alineado a la izquierda */
+  align-items: flex-start;
 }
 
 .experience-title {
   font-weight: 700;
   font-size: 1.6rem;
-  color: var(--item-color);
+  color: #2C3E50;
   width: 100%;
   text-align: left;
   margin: 0;
@@ -110,24 +105,23 @@
   gap: 1rem;
 }
 
-/* Barra de acento lateral en el título */
 .experience-title::before {
   content: '';
   width: 4px;
   height: 24px;
-  background-color: var(--item-color);
+  background-color: var(--primary-color, #3b82f6);
   border-radius: 2px;
   transition: all 0.5s ease;
 }
 
 .experience-item.expanded .experience-title {
-  color: var(--contrast-color);
+  color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .experience-item.expanded .experience-title::before {
-  background-color: var(--contrast-color);
-  box-shadow: 0 0 10px color-mix(in srgb, var(--contrast-color) 50%, transparent);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
 }
 
 .experience-title, .experience-position, .experience-description-container {
@@ -136,16 +130,16 @@
 
 .experience-position {
   font-size: 1.1rem;
-  color: color-mix(in srgb, var(--item-color) 60%, #444);
+  color: #555;
   width: 100%;
   text-align: left;
   font-weight: 500;
   transition: all 0.5s ease;
-  padding-left: calc(4px + 1rem); /* Alineado con el texto del título */
+  padding-left: calc(4px + 1rem);
 }
 
 .experience-item.expanded .experience-position {
-  color: color-mix(in srgb, var(--contrast-color) 90%, transparent);
+  color: rgba(255, 255, 255, 0.92);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   padding-left: calc(4px + 1rem);
 }
@@ -171,8 +165,7 @@
 .experience-description {
   font-size: 1.05rem;
   margin-block: 0 1rem;
-  color: var(--contrast-color);
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.92);
   line-height: 1.6;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   white-space: pre-wrap;

@@ -13,9 +13,6 @@ interface Experience {
   description: string;
   imageUrl: string;
   technologies: string[];
-  color: string;
-  isDark: boolean;
-  tintIntensity: string;
 }
 
 @Component({
@@ -75,9 +72,6 @@ export class ExperienceComponent implements OnInit, OnDestroy {
           'clickup',
           'sass',
         ],
-        color: '#000837',
-        isDark: true,
-        tintIntensity: '30%',
       },
       {
         title: this.translate.instant('experience.dialogo.title'),
@@ -93,9 +87,6 @@ export class ExperienceComponent implements OnInit, OnDestroy {
           'gitea',
           'sass',
         ],
-        color: '#AEC634',
-        isDark: false,
-        tintIntensity: '12%',
       },
     ];
   }
