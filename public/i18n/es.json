@@ -4,9 +4,9 @@
     "connect": "¡Conectemos!",
     "passion": "Apasionado por crear aplicaciones digitales",
     "subtitles": {
-      "webDeveloper": "Desarrollador Web",
-      "fullStack": "Desarrollador Full-Stack",
-      "dataAnalyst": "Analista de Datos"
+      "webDeveloper": "Desarrollador Full-Stack",
+      "fullStack": "Data Engineer",
+      "dataAnalyst": "Especialista en Datos y Automatización"
     }
   },
   "languages": {
@@ -25,12 +25,26 @@
     "zepo": {
       "title": "Desarrollador Full-Stack",
       "position": "Zepo Intelligence",
-      "description": "Formé parte de una startup seleccionada para el programa Google for Startups, donde desarrollé en plataformas relacionadas con la ciberseguridad y security-awareness. Colaboré en la migración y eliminación de código legacy, y desarrollé servicios, paneles interactivos y visualizaciones para mostrar métricas clave a los usuarios. Optimicé y adapté un complemento distribuido a través de la tienda de Microsoft, mejorando su funcionalidad. Diseñé e implementé dashboards analíticos en TypeScript y Angular, integrados con APIs REST. Desarrollé y gestioné bases de datos NoSQL con MongoDB como sistema principal, complementado con MySQL para soluciones específicas, y utilicé Python para procesos automatizados y scripts personalizados. Implementé tests automatizados para optimizar la resolución de bugs críticos. Utilicé Docker para gestionar entornos locales. Trabajé bajo metodologías ágiles."
+      "description": "Formé parte de una startup seleccionada para el programa Google for Startups, donde desarrollé en plataformas relacionadas con la ciberseguridad y security-awareness. Colaboré en la migración y eliminación de código legacy, y desarrollé servicios, paneles interactivos y visualizaciones para mostrar métricas clave a los usuarios. Optimicé y adapté un complemento distribuido a través de la tienda de Microsoft, mejorando su funcionalidad. Diseñé e implementé dashboards analíticos en TypeScript y Angular, integrados con APIs REST. Desarrollé y gestioné bases de datos NoSQL con MongoDB como sistema principal, complementado con MySQL para soluciones específicas, y utilicé Python para procesos automatizados y scripts personalizados. Implementé tests automatizados para optimizar la resolución de bugs críticos. Utilicé Docker para gestionar entornos locales. Trabajé bajo metodologías ágiles.",
+      "date": "Agosto 2024 — Enero 2025"
     },
     "dialogo": {
       "title": "Desarrollador Full-Stack",
       "position": "Diálogo Tecnológico",
-      "description": "Desarrollé soluciones web full-stack para clientes externos, enfocándome en la componentización en Angular con estilos reutilizables en SASS y CSS. Construí APIs REST y servicios de autenticación JWT utilizando Spring Boot y Angular, con persistencia en bases de datos NoSQL (MongoDB). Implementé contenedores Docker para entornos de desarrollo y despliegue. Colaboré en la integración de nuevos componentes en proyectos existentes, mejorando la escalabilidad y mantenibilidad. Participé en metodologías ágiles, incluidas revisiones de código y planificación iterativa."
+      "description": "Desarrollé soluciones web full-stack para clientes externos, enfocándome en la componentización en Angular con estilos reutilizables en SASS y CSS. Construí APIs REST y servicios de autenticación JWT utilizando Spring Boot y Angular, con persistencia en bases de datos NoSQL (MongoDB). Implementé contenedores Docker para entornos de desarrollo y despliegue. Colaboré en la integración de nuevos componentes en proyectos existentes, mejorando la escalabilidad y mantenibilidad. Participé en metodologías ágiles, incluidas revisiones de código y planificación iterativa.",
+      "date": "Abril 2024 — Agosto 2024"
+    },
+    "corvus": {
+      "title": "Especialista en Datos y Automatización",
+      "position": "Corvus Global — Hencok VTC",
+      "date": "Febrero 2026 — Septiembre 2026",
+      "description": "Desarrollé una plataforma de gestión VTC para calcular nóminas y centralizar datos de conductores, cuadrantes y servicios de Uber, Cabify y Bolt con Angular, NestJS y Python. Diseñé flujos ETL y APIs REST, automaticé la extracción de documentos y registros para auditar nóminas, y construí dashboards en Power BI para gerencia y equipos no técnicos. Administré el dato maestro y los controles de acceso, estableciendo una única fuente de verdad."
+    },
+    "zemios": {
+      "title": "Desarrollador Full-Stack y Coordinador Técnico",
+      "position": "Zemios — Plataforma educativa",
+      "date": "Febrero 2025 — Febrero 2026",
+      "description": "Desarrollé y mantuve APIs REST con NestJS/Node.js y la arquitectura frontend en Angular 21, con componentes reutilizables y sistemas de diseño para plataformas educativas. Implementé automatizaciones ETL con Python (Pandas/NumPy), consultas SQL/NoSQL y dashboards; incorporé chatbots e IA para la generación de contenido y formé a trainees. Desplegué con Docker y AWS/Azure, coordinando técnicamente el proyecto."
     }
   },
   "projects": {
@@ -112,7 +126,7 @@
     "emailDialog": {
       "title": "Selecciona tu cliente de correo"
     },
-    "copyright": "© 2025 Eliceo León"
+    "copyright": "© 2026 Eliceo León"
   },
   "studies": {
     "webDev": {
@@ -140,7 +154,20 @@
       ],
       "moreInfo": "Ver más información"
     },
-    "achievements": "Logros y habilidades adquiridas:"
+    "achievements": "Logros y habilidades adquiridas:",
+    "rpa": {
+      "title": "Automatización de Procesos (RPA)",
+      "institution": "EOI",
+      "period": "2025 — 2026",
+      "description": "Formación especializada en automatización de procesos con UiPath, modelado BPMN y metodología de implantación de proyectos RPA (312,5 h).",
+      "achievements": [
+        "Diseño y automatización de flujos de trabajo con UiPath.",
+        "Modelado de procesos de negocio con BPMN.",
+        "Implantación de proyectos RPA y buenas prácticas de gobierno.",
+        "Formación de 312,5 horas orientada a entornos reales."
+      ],
+      "moreInfo": "Ver más información"
+    }
   },
   "stack": {
     "categories": {
@@ -212,7 +239,7 @@
       },
       "architecture": {
         "title": "Arquitectura",
-        "description": "Proyecto desarrollado en Angular 17 usando standalone components, rutas integradas y directivas propias para garantizar mantenimiento ágil y alta escalabilidad."
+        "description": "Proyecto desarrollado en Angular 21 usando standalone components, rutas integradas y directivas propias para garantizar mantenimiento ágil y alta escalabilidad."
       },
       "license": {
         "title": "Licencia",
@@ -231,7 +258,7 @@
             "Debes incluir el aviso de copyright original"
           ]
         },
-        "note": "Puedes usar este código libremente, pero <strong>debes mantener este aviso de licencia</strong> en todas las copias.<br>© 2025 Eliceo León Moreta. Todos los derechos reservados."
+        "note": "Puedes usar este código libremente, pero <strong>debes mantener este aviso de licencia</strong> en todas las copias.<br>© 2026 Eliceo León Moreta. Todos los derechos reservados."
       }
     },
     "backHome": "Volver al inicio"

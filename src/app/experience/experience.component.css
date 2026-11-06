@@ -144,6 +144,20 @@
   padding-left: calc(4px + 1rem);
 }
 
+.experience-date {
+  margin: 0 0 0.5rem;
+  padding-left: calc(4px + 1rem);
+  color: #6b7280;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color 0.5s ease;
+}
+
+.experience-item.expanded .experience-date {
+  color: rgba(255, 255, 255, 0.78);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
 .experience-description-container {
   max-height: 0;
   overflow: hidden;

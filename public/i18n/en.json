@@ -4,9 +4,9 @@
     "connect": "Let's connect!",
     "passion": "Passionate about building digital applications",
     "subtitles": {
-      "webDeveloper": "Web Developer",
-      "fullStack": "Full-Stack Developer",
-      "dataAnalyst": "Data Analyst"
+      "webDeveloper": "Full-Stack Developer",
+      "fullStack": "Data Engineer",
+      "dataAnalyst": "Data & Automation Specialist"
     }
   },
   "languages": {
@@ -25,12 +25,26 @@
     "zepo": {
       "title": "Full-Stack Developer",
       "position": "Zepo Intelligence",
-      "description": "I was part of a startup selected for the Google for Startups program, where I worked on platforms related to cybersecurity and security-awareness. I contributed to the migration and removal of legacy code, and developed services, interactive dashboards, and data visualizations to display key metrics to users. I optimized and adapted a company add-on distributed through the Microsoft Store, improving its functionality. I designed and implemented analytical dashboards using TypeScript and Angular, integrated with REST APIs. I developed and managed NoSQL databases with MongoDB as the main system, complemented by MySQL for specific solutions, and used Python for automated processes and custom scripts. I implemented automated tests to improve the resolution of critical bugs. I used Docker to manage local environments. I worked under agile methodologies."
+      "description": "I was part of a startup selected for the Google for Startups program, where I worked on platforms related to cybersecurity and security-awareness. I contributed to the migration and removal of legacy code, and developed services, interactive dashboards, and data visualizations to display key metrics to users. I optimized and adapted a company add-on distributed through the Microsoft Store, improving its functionality. I designed and implemented analytical dashboards using TypeScript and Angular, integrated with REST APIs. I developed and managed NoSQL databases with MongoDB as the main system, complemented by MySQL for specific solutions, and used Python for automated processes and custom scripts. I implemented automated tests to improve the resolution of critical bugs. I used Docker to manage local environments. I worked under agile methodologies.",
+      "date": "August 2024 — January 2025"
     },
     "dialogo": {
       "title": "Full-Stack Developer",
       "position": "Diálogo Tecnológico",
-      "description": "I created full-stack web solutions for external clients: single-page apps in Angular with reusable SASS/CSS components, REST APIs and JWT services in Spring Boot & Angular with MongoDB persistence, Docker containerization, and the integration of new components to improve scalability and maintainability in an agile setting."
+      "description": "I created full-stack web solutions for external clients: single-page apps in Angular with reusable SASS/CSS components, REST APIs and JWT services in Spring Boot & Angular with MongoDB persistence, Docker containerization, and the integration of new components to improve scalability and maintainability in an agile setting.",
+      "date": "April 2024 — August 2024"
+    },
+    "corvus": {
+      "title": "Data & Automation Specialist",
+      "position": "Corvus Global — Hencok VTC",
+      "date": "February 2026 — September 2026",
+      "description": "I built a VTC management platform to calculate driver payroll and centralize driver, schedule and Uber, Cabify and Bolt service data using Angular, NestJS and Python. I designed ETL flows and REST APIs, automated the extraction of documents and records for payroll audits, and built Power BI dashboards for management and non-technical teams. I managed master data and access controls, establishing a single source of truth."
+    },
+    "zemios": {
+      "title": "Full-Stack Developer & Technical Coordinator",
+      "position": "Zemios — Education Platform",
+      "date": "February 2025 — February 2026",
+      "description": "I developed and maintained REST APIs with NestJS/Node.js and the Angular 21 frontend architecture, building reusable components and design systems for education platforms. I implemented Python ETL automations (Pandas/NumPy), SQL/NoSQL queries and dashboards; introduced chatbots and AI-assisted content generation, and trained junior developers. I deployed with Docker and AWS/Azure while coordinating the project technically."
     }
   },
   "projects": {
@@ -112,7 +126,7 @@
     "emailDialog": {
       "title": "Choose your email client"
     },
-    "copyright": "© 2025 Eliceo León"
+    "copyright": "© 2026 Eliceo León"
   },
   "studies": {
     "webDev": {
@@ -140,7 +154,20 @@
       ],
       "moreInfo": "See more information"
     },
-    "achievements": "Achievements and skills acquired:"
+    "achievements": "Achievements and skills acquired:",
+    "rpa": {
+      "title": "Process Automation (RPA)",
+      "institution": "EOI",
+      "period": "2025 — 2026",
+      "description": "Specialised training in process automation with UiPath, BPMN modelling and RPA project delivery methodology (312.5 hours).",
+      "achievements": [
+        "Designed and automated workflows with UiPath.",
+        "Modelled business processes with BPMN.",
+        "Delivered RPA projects and governance best practices.",
+        "312.5 hours of hands-on, project-oriented training."
+      ],
+      "moreInfo": "Learn more"
+    }
   },
   "stack": {
     "categories": {
@@ -212,7 +239,7 @@
       },
       "architecture": {
         "title": "Architecture",
-        "description": "Project developed in Angular 17 using standalone components, integrated routes and custom directives to ensure agile maintenance and high scalability."
+        "description": "Project developed in Angular 21 using standalone components, integrated routes and custom directives to ensure agile maintenance and high scalability."
       },
       "license": {
         "title": "License",
@@ -231,7 +258,7 @@
             "You must include the original copyright notice"
           ]
         },
-        "note": "You can use this code freely, but <strong>you must keep this license notice</strong> in all copies.<br>© 2025 Eliceo León Moreta. All rights reserved."
+        "note": "You can use this code freely, but <strong>you must keep this license notice</strong> in all copies.<br>© 2026 Eliceo León Moreta. All rights reserved."
       }
     },
     "backHome": "Back to Home"

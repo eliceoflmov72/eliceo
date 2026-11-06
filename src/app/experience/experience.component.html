@@ -14,6 +14,7 @@
       <div class="experience-content">
         <h3 class="experience-title">{{ experience.title }}</h3>
         <h4 class="experience-position">{{ experience.position }}</h4>
+        <p class="experience-date">{{ experience.date }}</p>
         <div class="experience-description-container" [class.expanded]="expandedIndex === i">
           <p class="experience-description">{{ experience.description }}</p>
           @if (expandedIndex === i) {

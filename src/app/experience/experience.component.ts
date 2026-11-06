@@ -10,6 +10,7 @@ import { CloseOnScrollDirective } from '../shared/directives/close-on-scroll.dir
 interface Experience {
   title: string;
   position: string;
+  date: string;
   description: string;
   imageUrl: string;
   technologies: string[];
@@ -54,8 +55,49 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   private loadExperiences() {
     this.experiences = [
       {
+        title: this.translate.instant('experience.corvus.title'),
+        position: this.translate.instant('experience.corvus.position'),
+        date: this.translate.instant('experience.corvus.date'),
+        description: this.translate.instant('experience.corvus.description'),
+        imageUrl: '/experiences/corvus.svg',
+        technologies: [
+          'angular',
+          'nestjs',
+          'python',
+          'power-bi',
+          'mongodb',
+          'mysql',
+          'docker',
+          'aws',
+          'github',
+          'clickup',
+        ],
+      },
+      {
+        title: this.translate.instant('experience.zemios.title'),
+        position: this.translate.instant('experience.zemios.position'),
+        date: this.translate.instant('experience.zemios.date'),
+        description: this.translate.instant('experience.zemios.description'),
+        imageUrl: '/experiences/zemios.svg',
+        technologies: [
+          'angular',
+          'nestjs',
+          'node',
+          'python',
+          'pandas',
+          'mysql',
+          'mongodb',
+          'docker',
+          'aws',
+          'google-cloud',
+          'github',
+          'clickup',
+        ],
+      },
+      {
         title: this.translate.instant('experience.zepo.title'),
         position: this.translate.instant('experience.zepo.position'),
+        date: this.translate.instant('experience.zepo.date'),
         description: this.translate.instant('experience.zepo.description'),
         imageUrl: '/experiences/experience1.webp',
         technologies: [
@@ -76,6 +118,7 @@ export class ExperienceComponent implements OnInit, OnDestroy {
       {
         title: this.translate.instant('experience.dialogo.title'),
         position: this.translate.instant('experience.dialogo.position'),
+        date: this.translate.instant('experience.dialogo.date'),
         description: this.translate.instant('experience.dialogo.description'),
         imageUrl: '/experiences/experience2.png',
         technologies: [

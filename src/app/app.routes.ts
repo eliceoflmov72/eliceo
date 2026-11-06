@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { InfoComponent } from './info/info.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent, title: 'Eliceo León' },
+  { path: '', component: HomeComponent, title: 'Eliceo León — Full-Stack & Data Engineer' },
   { path: 'info', component: InfoComponent, title: 'Más información' },
   {
     path: 'presentacion',
