@@ -71,10 +71,6 @@ export class StudiesComponent {
     }
   ];
 
-  get totalCertifications(): number {
-    return this.certificationGroups.reduce((total, group) => total + group.items.length, 0);
-  }
-
   constructor(
     private animationService: AnimationService,
     public translate: TranslateService

@@ -78,13 +78,7 @@
 
 <section class="certifications">
   <div class="certifications-header">
-    <div class="certifications-heading">
-      <h3>
-        <i class="pi pi-verified" aria-hidden="true"></i>
-        {{ 'studies.certificationsTitle' | translate }}
-      </h3>
-      <p>{{ 'studies.certificationsSubtitle' | translate: { count: totalCertifications } }}</p>
-    </div>
+    <h3 class="certifications-title">{{ 'studies.certificationsTitle' | translate }}</h3>
 
     <a [href]="linkedinCertificationsUrl"
       target="_blank"
@@ -120,7 +114,6 @@
         <ul class="credential-list">
           @for (item of group.items; track item.name) {
             <li>
-              <i class="pi pi-verified" aria-hidden="true"></i>
               <span class="credential-name">{{ item.name }}</span>
               <span class="credential-year">{{ item.year }}</span>
             </li>

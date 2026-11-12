@@ -192,7 +192,6 @@
       "moreInfo": "Ver más información"
     },
     "certificationsTitle": "Certificaciones y credenciales",
-    "certificationsSubtitle": "{{count}} credenciales verificables en datos, IA, grafos y protección de datos.",
     "credentialsCount": "{{count}} credenciales",
     "credentialCountOne": "1 credencial",
     "viewOnLinkedin": "Ver en LinkedIn"

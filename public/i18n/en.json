@@ -192,7 +192,6 @@
       "moreInfo": "Learn more"
     },
     "certificationsTitle": "Certifications & credentials",
-    "certificationsSubtitle": "{{count}} verifiable credentials in data, AI, graphs and data protection.",
     "credentialsCount": "{{count}} credentials",
     "credentialCountOne": "1 credential",
     "viewOnLinkedin": "View on LinkedIn"

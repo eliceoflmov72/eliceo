@@ -348,7 +348,7 @@
 
 .certifications-header {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
   margin-top: 0.5rem;
@@ -356,24 +356,11 @@
   border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
-.certifications-heading h3 {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin: 0 0 0.3rem;
+.certifications-title {
+  margin: 0;
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--text-color, #1e293b);
-}
-
-.certifications-heading h3 i {
-  color: var(--primary-color, #3b82f6);
-}
-
-.certifications-heading p {
-  margin: 0;
-  font-size: 0.89rem;
-  color: var(--text-color-secondary, #64748b);
 }
 
 .linkedin-link {
@@ -477,15 +464,9 @@
 
 .credential-list li {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
   gap: 0.55rem;
-}
-
-.credential-list li > i {
-  margin-top: 0.16rem;
-  font-size: 0.92rem;
-  color: var(--primary-color, #3b82f6);
 }
 
 .credential-name {
@@ -496,7 +477,6 @@
 }
 
 .credential-year {
-  margin-top: 0.14rem;
   font-size: 0.74rem;
   font-weight: 600;
   white-space: nowrap;
