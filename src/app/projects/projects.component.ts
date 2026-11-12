@@ -80,17 +80,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
         technologies: ['angular', 'nestjs', 'python', 'typescript', 'sass', 'github']
       },
       {
-        name: this.translate.instant('projects.abonOnline.name'),
-        image: 'projects/street.webp',
-        link: 'https://github.com/eliceoflmov72/abono-angular',
-        description: this.translate.instant('projects.abonOnline.description'),
-        summary: this.translate.instant('projects.abonOnline.summary'),
-        category: this.translate.instant('projects.abonOnline.category'),
-        active: false,
-        private: false,
-        technologies: ['angular', 'node', 'typescript', 'sass', 'github', 'leaflet']
-      },
-      {
         name: this.translate.instant('projects.mantenlo.name'),
         image: 'projects/mantenlo.png',
         link: '',
@@ -100,6 +89,17 @@ export class ProjectsComponent implements OnInit, OnDestroy {
         active: false,
         private: true,
         technologies: ['angular', 'firebase', 'google-cloud', 'typescript', 'tailwind', 'css', 'github']
+      },
+      {
+        name: this.translate.instant('projects.abonOnline.name'),
+        image: 'projects/street.webp',
+        link: 'https://github.com/eliceoflmov72/abono-angular',
+        description: this.translate.instant('projects.abonOnline.description'),
+        summary: this.translate.instant('projects.abonOnline.summary'),
+        category: this.translate.instant('projects.abonOnline.category'),
+        active: false,
+        private: false,
+        technologies: ['angular', 'node', 'typescript', 'sass', 'github', 'leaflet']
       }
     ];
   }

@@ -44,6 +44,13 @@ export class StudiesComponent {
 
   readonly certificationGroups: CertificationGroup[] = [
     {
+      issuer: 'Grupo LAE',
+      logo: 'technologies/grupo-lae.png',
+      items: [
+        { name: 'Experto en protección de datos', year: '2026' }
+      ]
+    },
+    {
       issuer: 'MongoDB',
       logo: 'technologies/mongodb.png',
       items: [
@@ -60,13 +67,6 @@ export class StudiesComponent {
       items: [
         { name: 'Neo4j Graph Data Science', year: '2024' },
         { name: 'Neo4j Professional', year: '2024' }
-      ]
-    },
-    {
-      issuer: 'Grupo LAE',
-      logo: 'technologies/grupo-lae.png',
-      items: [
-        { name: 'Experto en protección de datos', year: '2026' }
       ]
     }
   ];

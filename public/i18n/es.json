@@ -22,13 +22,13 @@
   },
   "experience": {
     "zepo": {
-      "title": "Desarrollador Full-Stack",
+      "title": "Desarrollador",
       "position": "Zepo Intelligence",
       "description": "Formé parte de una startup seleccionada para el programa Google for Startups, donde desarrollé en plataformas relacionadas con la ciberseguridad y security-awareness. Colaboré en la migración y eliminación de código legacy, y desarrollé servicios, paneles interactivos y visualizaciones para mostrar métricas clave a los usuarios. Optimicé y adapté un complemento distribuido a través de la tienda de Microsoft, mejorando su funcionalidad. Diseñé e implementé dashboards analíticos en TypeScript y Angular, integrados con APIs REST. Desarrollé y gestioné bases de datos NoSQL con MongoDB como sistema principal, complementado con MySQL para soluciones específicas, y utilicé Python para procesos automatizados y scripts personalizados. Implementé tests automatizados para optimizar la resolución de bugs críticos. Utilicé Docker para gestionar entornos locales. Trabajé bajo metodologías ágiles.",
       "date": "Agosto 2024 — Enero 2025"
     },
     "dialogo": {
-      "title": "Desarrollador Full-Stack",
+      "title": "Desarrollador",
       "position": "Diálogo Tecnológico",
       "description": "Desarrollé soluciones web full-stack para clientes externos, enfocándome en la componentización en Angular con estilos reutilizables en SASS y CSS. Construí APIs REST y servicios de autenticación JWT utilizando Spring Boot y Angular, con persistencia en bases de datos NoSQL (MongoDB). Implementé contenedores Docker para entornos de desarrollo y despliegue. Colaboré en la integración de nuevos componentes en proyectos existentes, mejorando la escalabilidad y mantenibilidad. Participé en metodologías ágiles, incluidas revisiones de código y planificación iterativa.",
       "date": "Abril 2024 — Agosto 2024"
@@ -40,7 +40,7 @@
       "description": "Desarrollé una plataforma de gestión VTC para calcular nóminas y centralizar datos de conductores, cuadrantes y servicios de Uber, Cabify y Bolt con Angular, NestJS y Python. Diseñé flujos ETL y APIs REST, automaticé la extracción de documentos y registros para auditar nóminas, y construí dashboards en Power BI para gerencia y equipos no técnicos. Administré el dato maestro y los controles de acceso, estableciendo una única fuente de verdad."
     },
     "zemios": {
-      "title": "Desarrollador Full-Stack y Coordinador Técnico",
+      "title": "Desarrollador y Coordinador Técnico",
       "position": "Zemios — Plataforma educativa",
       "date": "Febrero 2025 — Febrero 2026",
       "description": "Desarrollé y mantuve APIs REST con NestJS/Node.js y la arquitectura frontend en Angular 21, con componentes reutilizables y sistemas de diseño para plataformas educativas. Implementé automatizaciones ETL con Python (Pandas/NumPy), consultas SQL/NoSQL y dashboards; incorporé chatbots e IA para la generación de contenido y formé a trainees. Desplegué con Docker y AWS/Azure, coordinando técnicamente el proyecto."
