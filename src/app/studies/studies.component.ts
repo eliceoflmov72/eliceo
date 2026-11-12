@@ -64,7 +64,7 @@ export class StudiesComponent {
     },
     {
       issuer: 'Grupo LAE',
-      icon: 'pi-shield',
+      logo: 'technologies/grupo-lae.png',
       items: [
         { name: 'Experto en protección de datos', year: '2026' }
       ]
