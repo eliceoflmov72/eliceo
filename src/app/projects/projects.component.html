@@ -1,17 +1,51 @@
 <div class="projects-container">
   <div class="projects-grid">
-    @for (project of projects; track project; let i = $index) {
-      <div class="project-item semi-transparent-border semi-transparent-border--md semi-transparent-border--hover"
-        (click)="toggleActive(project)" [attr.data-project]="project.name"
-        appAnimate [animationType]="'scale-in'"
-        [animationOptions]="{ rootMargin: '-50px', delay: i * 100 }" [elementId]="'project-' + i">
-        <div class="image-container">
+    @for (project of projects; track project.name; let i = $index) {
+      <article class="project-card"
+        (click)="toggleActive(project)"
+        (keydown)="handleCardKeydown($event, project)"
+        role="button"
+        tabindex="0"
+        [attr.data-project]="project.name"
+        [attr.aria-label]="project.name"
+        appAnimate
+        [animationType]="'scale-in'"
+        [animationOptions]="{ rootMargin: '-50px', delay: i * 100 }"
+        [elementId]="'project-' + i">
+
+        <div class="project-media">
           <img [src]="project.image" [alt]="project.name" loading="lazy">
+
+          <span [class]="getStatusClass(project)">
+            {{ getStatusKey(project) | translate }}
+          </span>
+
+          <span class="project-open-icon" aria-hidden="true">
+            <i class="pi pi-arrow-up-right"></i>
+          </span>
         </div>
-        <div class="project-name">
-          <span>{{ project.name }}</span>
+
+        <div class="project-body">
+          @if (project.category) {
+            <span class="project-category">{{ project.category }}</span>
+          }
+
+          <h3 class="project-title">{{ project.name }}</h3>
+
+          @if (project.summary) {
+            <p class="project-summary">{{ project.summary }}</p>
+          }
+
+          <div class="project-tech">
+            @for (tech of project.technologies.slice(0, 3); track tech) {
+              <span class="tech-chip">{{ getTechLabel(tech) }}</span>
+            }
+            @if (project.technologies.length > 3) {
+              <span class="tech-chip tech-chip--more">+{{ project.technologies.length - 3 }}</span>
+            }
+          </div>
         </div>
-      </div>
+      </article>
     }
   </div>
 
@@ -26,40 +60,32 @@
     [transitionOptions]="'300ms cubic-bezier(0.4, 0, 0.2, 1)'">
 
     @if (selectedProject) {
-      <div class="project-details-container">
-        <div class="project-details-body">
-          <div class="project-details-image-container">
-            <img [src]="selectedProject.image" [alt]="selectedProject.name" class="project-details-image">
-          </div>
+      <div class="project-details">
+        <div class="project-details-media">
+          <img [src]="selectedProject.image" [alt]="selectedProject.name">
+          <span [class]="getStatusClass(selectedProject)">
+            {{ getStatusKey(selectedProject) | translate }}
+          </span>
+        </div>
 
-          <div class="project-details-info">
-            <div class="project-actions">
-              <a [href]="selectedProject.link || '#'"
-                target="_blank"
-                class="project-link"
-                [class.project-link--active]="selectedProject.active"
-                [class.project-link--private]="selectedProject.private"
-                (click)="handleLinkClick($event, selectedProject)"
-                [pTooltip]="selectedProject.private ? ('projects.status.privateTooltip' | translate) : ''"
-                tooltipPosition="top"
-                [showDelay]="100"
-                [hideDelay]="100">
-                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                @if (selectedProject.private) {
-                  <span>{{ 'projects.status.private' | translate }}</span>
-                } @else if (!selectedProject.private && !selectedProject.link) {
-                  <span>{{ 'projects.status.noLink' | translate }}</span>
-                } @else if (!selectedProject.private && selectedProject.link && !selectedProject.active) {
-                  <span>{{ 'projects.status.inactive' | translate }}</span>
-                } @else if (!selectedProject.private && selectedProject.link && selectedProject.active) {
-                  <span>{{ 'projects.status.active' | translate }}</span>
-                }
-              </a>
-            </div>
+        <div class="project-details-content">
+          @if (selectedProject.category) {
+            <span class="project-category">{{ selectedProject.category }}</span>
+          }
 
-            <div class="project-description" [innerHTML]="selectedProject.description"></div>
-            <app-technologies [technologies]="selectedProject.technologies"></app-technologies>
-          </div>
+          <div class="project-description" [innerHTML]="selectedProject.description"></div>
+
+          <app-technologies [technologies]="selectedProject.technologies"></app-technologies>
+
+          <a [href]="selectedProject.link || '#'"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-link"
+            [class.project-link--disabled]="selectedProject.private || !selectedProject.link"
+            (click)="handleLinkClick($event, selectedProject)">
+            <i class="pi pi-external-link" aria-hidden="true"></i>
+            <span>{{ getActionKey(selectedProject) | translate }}</span>
+          </a>
         </div>
       </div>
     }

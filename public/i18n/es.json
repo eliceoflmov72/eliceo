@@ -5,7 +5,6 @@
     "passion": "Apasionado por crear aplicaciones digitales",
     "subtitles": {
       "webDeveloper": "Desarrollador Full-Stack",
-      "fullStack": "Data Engineer",
       "dataAnalyst": "Especialista en Datos y Automatización"
     }
   },
@@ -48,17 +47,41 @@
     }
   },
   "projects": {
+    "minerva": {
+      "name": "Minerva",
+      "category": "Plataforma educativa · IA",
+      "summary": "Cursos generados con IA: módulos, contenido y evaluaciones a partir del material del profesor.",
+      "description": "Minerva es una plataforma de creación de cursos que usa <strong>inteligencia artificial</strong> para convertir el material del docente en una ruta de aprendizaje completa.<br/><br/><strong>Qué incluye</strong><br/>&nbsp;&nbsp;• Generación automática de módulos y contenido.<br/>&nbsp;&nbsp;• Cuestionarios de opción múltiple, verdadero/falso y emparejamiento.<br/>&nbsp;&nbsp;• Estructura adaptada al nivel de cada alumno.<br/>&nbsp;&nbsp;• Design system propio (Nebula) sobre Angular + NestJS.<br/><br/>El objetivo es que el docente dedique el tiempo a enseñar, no a montar la estructura del curso."
+    },
+    "fleets": {
+      "name": "Fleets",
+      "category": "SaaS · Gestión de flotas",
+      "summary": "Cuadrantes, turnos, conductores, vehículos y métricas de flota en un único panel operativo.",
+      "description": "Fleets centraliza la operación diaria de una flota en una sola aplicación.<br/><br/><strong>Módulos principales</strong><br/>&nbsp;&nbsp;• Cuadrante y planificación de turnos por conductor y zona.<br/>&nbsp;&nbsp;• Gestión de vehículos, flotas, mantenimiento y disponibilidad.<br/>&nbsp;&nbsp;• Mapa de zonas y asignaciones en tiempo real.<br/>&nbsp;&nbsp;• Ingesta de datos, reportes y métricas de rendimiento.<br/>&nbsp;&nbsp;• Usuarios, roles y permisos.<br/><br/>La demo pública funciona con datos ficticios y permite recorrer la aplicación completa sin registro."
+    },
+    "zemios": {
+      "name": "Zemios",
+      "category": "Comunidad · Desarrollo",
+      "summary": "Comunidad para programadores junior: proyectos reales, colaboración y aprendizaje práctico.",
+      "description": "Se trata de una comunidad web para programadores juniors, creada con <strong>NestJS</strong>, <strong>MySQL</strong> y <strong>MongoDB</strong> (con @nestjs/mongoose).<br/><br/><strong>Qué ofrece</strong><br/>&nbsp;&nbsp;• Espacio para aprender, colaborar y desarrollar proyectos reales.<br/>&nbsp;&nbsp;• Impulsa la proyección profesional y conecta talento junior.<br/><br/>La plataforma fomenta el aprendizaje práctico mientras construyes tu carrera técnica."
+    },
     "abonOnline": {
       "name": "AbonOnline",
+      "category": "App web · Movilidad urbana",
+      "summary": "Mapa interactivo para localizar puntos de recarga de abonos y billetes de transporte público.",
       "description": "AbonOnline es una plataforma web que <strong>centraliza</strong> la información sobre puntos de venta y recarga de abonos y billetes de transporte público mediante un <strong>mapa interactivo</strong>.<br/><br/><strong>Funciones destacadas</strong><br/>&nbsp;&nbsp;• Búsqueda geolocalizada en tiempo real<br/>&nbsp;&nbsp;• Gestión de <strong>favoritos</strong> y comentarios<br/>&nbsp;&nbsp;• Panel de administración con roles y estadísticas.<br/><br/>AbonOnline resuelve la fragmentación actual de la información y acerca el transporte público al ciudadano."
     },
     "mantenlo": {
       "name": "Mantenlo",
+      "category": "SaaS · Hostelería",
+      "summary": "Planificación y verificación de tareas de mantenimiento e higiene para restaurantes, con APPCC.",
       "description": "Mantenlo es una aplicación web concebida para restaurantes que <strong>planifican y verifican tareas de mantenimiento e higiene</strong> en cada área de trabajo (cocina, barra, almacén…).<br/><br/><strong>Funciones clave</strong><br/>&nbsp;&nbsp;• Tablero de tareas diario por zonas.<br/>&nbsp;&nbsp;• Gestor de zonas y tareas.<br/>&nbsp;&nbsp;• Generador de documentos PDF.<br/>&nbsp;&nbsp;• Gestión de usuarios (activo/inactivo) de cada empleado.<br/>&nbsp;&nbsp;• Registro de actividad de empleados.<br/><br/>Además, Mantenlo ayuda a implementar y documentar de forma práctica el sistema <strong>APPCC</strong> (Análisis de Peligros y Puntos Críticos de Control), asegurando el control higiénico-sanitario exigido en auditorías."
     },
-    "zemios": {
-      "name": "Zemios",
-      "description": "Se trata de una comunidad web para programadores juniors, creada con <strong>NestJS</strong>, <strong>MySQL</strong> y <strong>MongoDB</strong> (con @nestjs/mongoose).<br/><br/><strong>Qué ofrece</strong><br/>&nbsp;&nbsp;• Espacio para aprender, colaborar y desarrollar proyectos reales.<br/>&nbsp;&nbsp;• Impulsa la proyección profesional y conecta talento junior.<br/><br/>La plataforma fomenta el aprendizaje práctico mientras construyes tu carrera técnica."
+    "actions": {
+      "open": "Abrir proyecto",
+      "private": "Proyecto privado",
+      "noLink": "Sin enlace",
+      "inactive": "Ver proyecto"
     },
     "status": {
       "private": "Privado",
@@ -144,8 +167,8 @@
     "aiBigData": {
       "title": "IA y Big Data",
       "institution": "IES Arcipreste de Hita",
-      "period": "2024 – 2025",
-      "description": "Especialización técnica en programación de sistemas de inteligencia artificial, aprendizaje automático y análisis de grandes volúmenes de datos. Formación orientada a entornos reales mediante herramientas modernas de procesamiento, modelado y visualización.",
+      "period": "Sept. 2024 – May 2025",
+      "description": "Especialización en desarrollo de sistemas de IA, machine learning y análisis de grandes volúmenes de datos. Competencias en programación de IA, gestión de Big Data y aplicación de soluciones tecnológicas en entornos empresariales.",
       "achievements": [
         "Entrenamiento y validación de modelos de machine learning aplicados a distintos casos de uso.",
         "Automatización de flujos de datos con herramientas como Apache Kafka, Spark y KNIME.",
@@ -157,17 +180,22 @@
     "achievements": "Logros y habilidades adquiridas:",
     "rpa": {
       "title": "Automatización de Procesos (RPA)",
-      "institution": "EOI",
-      "period": "2025 — 2026",
+      "institution": "Escuela de Organización Industrial (EOI)",
+      "period": "Oct. 2025 – Dic. 2026",
       "description": "Formación especializada en automatización de procesos con UiPath, modelado BPMN y metodología de implantación de proyectos RPA (312,5 h).",
       "achievements": [
         "Diseño y automatización de flujos de trabajo con UiPath.",
         "Modelado de procesos de negocio con BPMN.",
         "Implantación de proyectos RPA y buenas prácticas de gobierno.",
-        "Formación de 312,5 horas orientada a entornos reales."
+        "Identificación de procesos automatizables y estimación de su impacto."
       ],
       "moreInfo": "Ver más información"
-    }
+    },
+    "certificationsTitle": "Certificaciones y credenciales",
+    "certificationsSubtitle": "{{count}} credenciales verificables en datos, IA, grafos y protección de datos.",
+    "credentialsCount": "{{count}} credenciales",
+    "credentialCountOne": "1 credencial",
+    "viewOnLinkedin": "Ver en LinkedIn"
   },
   "stack": {
     "categories": {

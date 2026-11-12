@@ -5,7 +5,6 @@
     "passion": "Passionate about building digital applications",
     "subtitles": {
       "webDeveloper": "Full-Stack Developer",
-      "fullStack": "Data Engineer",
       "dataAnalyst": "Data & Automation Specialist"
     }
   },
@@ -48,17 +47,41 @@
     }
   },
   "projects": {
+    "minerva": {
+      "name": "Minerva",
+      "category": "EdTech · AI",
+      "summary": "AI-generated courses: modules, content and assessments built from the teacher's material.",
+      "description": "Minerva is a course-creation platform that uses <strong>artificial intelligence</strong> to turn the teacher's material into a complete learning path.<br/><br/><strong>What it includes</strong><br/>&nbsp;&nbsp;• Automatic generation of modules and content.<br/>&nbsp;&nbsp;• Multiple-choice, true/false and matching quizzes.<br/>&nbsp;&nbsp;• A structure adapted to each student's level.<br/>&nbsp;&nbsp;• Its own design system (Nebula) on top of Angular + NestJS.<br/><br/>The goal is for teachers to spend their time teaching, not building the course structure."
+    },
+    "fleets": {
+      "name": "Fleets",
+      "category": "SaaS · Fleet management",
+      "summary": "Rosters, shifts, drivers, vehicles and fleet metrics in a single operations dashboard.",
+      "description": "Fleets centralizes the daily operation of a fleet in a single application.<br/><br/><strong>Main modules</strong><br/>&nbsp;&nbsp;• Roster and shift planning by driver and zone.<br/>&nbsp;&nbsp;• Vehicle, fleet, maintenance and availability management.<br/>&nbsp;&nbsp;• Zone map and real-time assignments.<br/>&nbsp;&nbsp;• Data ingestion, reports and performance metrics.<br/>&nbsp;&nbsp;• Users, roles and permissions.<br/><br/>The public demo runs on fictional data and lets you explore the whole application without signing up."
+    },
+    "zemios": {
+      "name": "Zemios",
+      "category": "Community · Development",
+      "summary": "A community for junior developers: real projects, collaboration and hands-on learning.",
+      "description": "Zemios is a web community for junior developers built with <strong>NestJS</strong>, <strong>MySQL</strong> and <strong>MongoDB</strong> (via @nestjs/mongoose).<br/><br/><strong>What it offers</strong><br/>&nbsp;&nbsp;• A space to learn, collaborate and build real projects<br/>&nbsp;&nbsp;• Boosts professional growth and connects junior talent<br/><br/>The platform promotes hands-on learning while you grow your technical career."
+    },
     "abonOnline": {
       "name": "AbonOnline",
+      "category": "Web app · Urban mobility",
+      "summary": "Interactive map to find public-transport pass and ticket top-up points.",
       "description": "AbonOnline is a web platform built with Node.js and Angular that <strong>centralizes</strong> information on points of sale and top-up locations for public-transport tickets through an <strong>interactive map</strong>.<br/><br/><strong>Key features</strong><br/>&nbsp;&nbsp;• Real-time geolocated search<br/>&nbsp;&nbsp;• <strong>Favorites</strong> and comments management<br/>&nbsp;&nbsp;• Admin panel with roles and statistics.<br/><br/>AbonOnline solves today's information fragmentation and brings public transport closer to citizens."
     },
     "mantenlo": {
       "name": "Mantenlo",
+      "category": "SaaS · Hospitality",
+      "summary": "Maintenance and hygiene task planning and verification for restaurants, including HACCP.",
       "description": "Mantenlo is a web app for restaurants that <strong>plans and verifies maintenance and hygiene tasks</strong> in every work area (kitchen, bar, storeroom…).<br/><br/><strong>Key functions</strong><br/>&nbsp;&nbsp;• Daily task board by zone<br/>&nbsp;&nbsp;• Zone and task manager<br/>&nbsp;&nbsp;• PDF document generator<br/>&nbsp;&nbsp;• Employee-level user management (active/inactive)<br/>&nbsp;&nbsp;• Employee activity log<br/><br/>With Mantenlo, staff comply with cleanliness and food-safety rules while management gets clear, traceable reports.<br/><br/>Mantenlo also helps implement and document the <strong>HACCP</strong> (Hazard Analysis and Critical Control Points) system required in audits."
     },
-    "zemios": {
-      "name": "Zemios",
-      "description": "Zemios is a web community for junior developers built with <strong>NestJS</strong>, <strong>MySQL</strong> and <strong>MongoDB</strong> (via @nestjs/mongoose).<br/><br/><strong>What it offers</strong><br/>&nbsp;&nbsp;• A space to learn, collaborate and build real projects<br/>&nbsp;&nbsp;• Boosts professional growth and connects junior talent<br/><br/>The platform promotes hands-on learning while you grow your technical career."
+    "actions": {
+      "open": "Open project",
+      "private": "Private project",
+      "noLink": "No link",
+      "inactive": "View project"
     },
     "status": {
       "private": "Private",
@@ -144,8 +167,8 @@
     "aiBigData": {
       "title": "AI and Big Data",
       "institution": "IES Arcipreste de Hita",
-      "period": "2024 – 2025",
-      "description": "Technical specialization in artificial-intelligence systems, machine learning and big-data analytics, using modern tools for processing, modeling and visualization in real-world environments.",
+      "period": "Sept. 2024 – May 2025",
+      "description": "Specialization in AI systems, machine learning and large-scale data analysis. Skills in AI programming, Big Data management and the application of technology solutions in business environments.",
       "achievements": [
         "Trained and validated machine-learning models for various use cases.",
         "Automated data flows with Apache Kafka, Spark and KNIME.",
@@ -157,17 +180,22 @@
     "achievements": "Achievements and skills acquired:",
     "rpa": {
       "title": "Process Automation (RPA)",
-      "institution": "EOI",
-      "period": "2025 — 2026",
+      "institution": "Escuela de Organización Industrial (EOI)",
+      "period": "Oct. 2025 – Dec. 2026",
       "description": "Specialised training in process automation with UiPath, BPMN modelling and RPA project delivery methodology (312.5 hours).",
       "achievements": [
         "Designed and automated workflows with UiPath.",
         "Modelled business processes with BPMN.",
         "Delivered RPA projects and governance best practices.",
-        "312.5 hours of hands-on, project-oriented training."
+        "Identified automatable processes and estimated their impact."
       ],
       "moreInfo": "Learn more"
-    }
+    },
+    "certificationsTitle": "Certifications & credentials",
+    "certificationsSubtitle": "{{count}} verifiable credentials in data, AI, graphs and data protection.",
+    "credentialsCount": "{{count}} credentials",
+    "credentialCountOne": "1 credential",
+    "viewOnLinkedin": "View on LinkedIn"
   },
   "stack": {
     "categories": {

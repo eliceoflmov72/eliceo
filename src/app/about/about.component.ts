@@ -39,7 +39,6 @@ export class AboutComponent implements OnInit, OnDestroy {
   private loadSubtitles() {
     this.subtitles = [
       this.translate.instant('about.subtitles.webDeveloper'),
-      this.translate.instant('about.subtitles.fullStack'),
       this.translate.instant('about.subtitles.dataAnalyst')
     ];
   }

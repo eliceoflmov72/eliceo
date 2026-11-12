@@ -5,5 +5,7 @@ export interface Project {
   active: boolean;
   private: boolean;
   description?: string;
+  summary?: string;
+  category?: string;
   technologies: string[];
 }

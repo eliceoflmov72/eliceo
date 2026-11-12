@@ -171,12 +171,22 @@
 }
 
 .subtitle-wrapper {
-  height: 2.5rem;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+}
+
+.subtitle-sizer {
+  display: block;
+  visibility: hidden;
+  min-height: 2.5rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
 }
 
 .dynamic-subtitle {
+  top: 0;
   font-size: 1.8rem;
   color: #2C3E50;
   margin: 0;
@@ -185,6 +195,7 @@
   left: 0;
   transition: opacity 0.5s ease;
   font-weight: 400;
+  line-height: 1.4;
   letter-spacing: 0.5px;
 }
 
@@ -272,6 +283,10 @@
   }
 
   .dynamic-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .subtitle-sizer {
     font-size: 1.5rem;
   }
 

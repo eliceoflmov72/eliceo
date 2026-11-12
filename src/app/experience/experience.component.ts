@@ -141,4 +141,11 @@ export class ExperienceComponent implements OnInit, OnDestroy {
       this.expandedIndex = index;
     }
   }
+
+  handleCardKeydown(event: KeyboardEvent, index: number): void {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      this.toggleExperience(index);
+    }
+  }
 }

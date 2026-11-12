@@ -4,6 +4,10 @@
       [style.background-image]="expandedIndex === i ? 'url(' + experience.imageUrl + ')' : 'none'"
       [class.expanded]="expandedIndex === i"
       (click)="toggleExperience(i)"
+      (keydown)="handleCardKeydown($event, i)"
+      role="button"
+      tabindex="0"
+      [attr.aria-expanded]="expandedIndex === i"
       appAnimate
       [animationType]="'scale-in'"
       [animationOptions]="{ rootMargin: '-50px', delay: i * 100 }"
@@ -11,18 +15,36 @@
       [appCloseOnScroll]="expandedIndex === i"
       (closeOnScroll)="toggleExperience(null)">
       <div class="experience-gradient"></div>
-      <div class="experience-content">
-        <h3 class="experience-title">{{ experience.title }}</h3>
-        <h4 class="experience-position">{{ experience.position }}</h4>
-        <p class="experience-date">{{ experience.date }}</p>
-        <div class="experience-description-container" [class.expanded]="expandedIndex === i">
-          <p class="experience-description">{{ experience.description }}</p>
-          @if (expandedIndex === i) {
-            <app-technologies
-              [technologies]="experience.technologies"
-              [showBackground]="false">
-            </app-technologies>
-          }
+
+      <div class="experience-row">
+        <div class="experience-thumb" aria-hidden="true">
+          <img [src]="experience.imageUrl" [alt]="experience.title" loading="lazy">
+        </div>
+
+        <div class="experience-main">
+          <div class="experience-head">
+            <div class="experience-heading">
+              <h3 class="experience-title">{{ experience.title }}</h3>
+              <h4 class="experience-position">{{ experience.position }}</h4>
+            </div>
+
+            <div class="experience-side">
+              <span class="experience-date">{{ experience.date }}</span>
+              <span class="experience-toggle" aria-hidden="true">
+                <i class="pi pi-chevron-down"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="experience-description-container" [class.expanded]="expandedIndex === i">
+            <p class="experience-description">{{ experience.description }}</p>
+            @if (expandedIndex === i) {
+              <app-technologies
+                [technologies]="experience.technologies"
+                [showBackground]="false">
+              </app-technologies>
+            }
+          </div>
         </div>
       </div>
     </div>

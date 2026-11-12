@@ -24,6 +24,29 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   private scrollbarWidth: number = 0;
   private langChangeSubscription: Subscription;
 
+  private readonly techLabels: Record<string, string> = {
+    angular: 'Angular',
+    nestjs: 'NestJS',
+    node: 'Node.js',
+    typescript: 'TypeScript',
+    javascript: 'JavaScript',
+    mongodb: 'MongoDB',
+    mysql: 'MySQL',
+    postgresql: 'PostgreSQL',
+    primeng: 'PrimeNG',
+    tailwind: 'Tailwind CSS',
+    sass: 'Sass',
+    css: 'CSS',
+    html: 'HTML',
+    firebase: 'Firebase',
+    'google-cloud': 'Google Cloud',
+    github: 'GitHub',
+    docker: 'Docker',
+    leaflet: 'Leaflet',
+    python: 'Python',
+    nx: 'Nx'
+  };
+
   constructor(
     private animationService: AnimationService,
     private translate: TranslateService
@@ -47,10 +70,45 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   private loadProjects() {
     this.projects = [
       {
+        name: this.translate.instant('projects.minerva.name'),
+        image: 'projects/minerva.jpg',
+        link: 'https://minerva.zemios.net',
+        description: this.translate.instant('projects.minerva.description'),
+        summary: this.translate.instant('projects.minerva.summary'),
+        category: this.translate.instant('projects.minerva.category'),
+        active: true,
+        private: false,
+        technologies: ['angular', 'nestjs', 'typescript', 'tailwind', 'mongodb']
+      },
+      {
+        name: this.translate.instant('projects.fleets.name'),
+        image: 'projects/fleets.jpg',
+        link: 'https://fleets-demo.zemios.net',
+        description: this.translate.instant('projects.fleets.description'),
+        summary: this.translate.instant('projects.fleets.summary'),
+        category: this.translate.instant('projects.fleets.category'),
+        active: true,
+        private: false,
+        technologies: ['angular', 'nestjs', 'typescript', 'mongodb', 'docker']
+      },
+      {
+        name: this.translate.instant('projects.zemios.name'),
+        image: 'projects/zemios.png',
+        link: 'https://zemios.com/',
+        description: this.translate.instant('projects.zemios.description'),
+        summary: this.translate.instant('projects.zemios.summary'),
+        category: this.translate.instant('projects.zemios.category'),
+        active: true,
+        private: false,
+        technologies: ['angular', 'nestjs', 'typescript', 'sass', 'github']
+      },
+      {
         name: this.translate.instant('projects.abonOnline.name'),
         image: 'projects/street.webp',
         link: 'https://github.com/eliceoflmov72/abono-angular',
         description: this.translate.instant('projects.abonOnline.description'),
+        summary: this.translate.instant('projects.abonOnline.summary'),
+        category: this.translate.instant('projects.abonOnline.category'),
         active: false,
         private: false,
         technologies: ['angular', 'node', 'typescript', 'sass', 'github', 'leaflet']
@@ -60,18 +118,11 @@ export class ProjectsComponent implements OnInit, OnDestroy {
         image: 'projects/mantenlo.png',
         link: '',
         description: this.translate.instant('projects.mantenlo.description'),
+        summary: this.translate.instant('projects.mantenlo.summary'),
+        category: this.translate.instant('projects.mantenlo.category'),
         active: false,
         private: true,
         technologies: ['angular', 'firebase', 'google-cloud', 'typescript', 'tailwind', 'css', 'github']
-      },
-      {
-        name: this.translate.instant('projects.zemios.name'),
-        image: 'projects/zemios.png',
-        link: 'https://zemios.com/',
-        description: this.translate.instant('projects.zemios.description'),
-        active: true,
-        private: false,
-        technologies: ['angular', 'nestjs', 'typescript', 'sass', 'github']
       }
     ];
   }
@@ -117,9 +168,43 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   }
 
   handleLinkClick(event: Event, project: Project): void {
-    if (!project.link) {
+    if (!project.link || project.private) {
       event.preventDefault();
-      return;
     }
+  }
+
+  handleCardKeydown(event: KeyboardEvent, project: Project): void {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      this.toggleActive(project);
+    }
+  }
+
+  getTechLabel(tech: string): string {
+    return this.techLabels[tech] ?? tech.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+  }
+
+  getStatusKey(project: Project): string {
+    if (project.private) {
+      return 'projects.status.private';
+    }
+    return project.active ? 'projects.status.active' : 'projects.status.inactive';
+  }
+
+  getStatusClass(project: Project): string {
+    if (project.private) {
+      return 'status-badge status-badge--private';
+    }
+    return project.active ? 'status-badge status-badge--active' : 'status-badge status-badge--inactive';
+  }
+
+  getActionKey(project: Project): string {
+    if (project.private) {
+      return 'projects.actions.private';
+    }
+    if (!project.link) {
+      return 'projects.actions.noLink';
+    }
+    return project.active ? 'projects.actions.open' : 'projects.actions.inactive';
   }
 }
