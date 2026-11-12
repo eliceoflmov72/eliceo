@@ -2,28 +2,44 @@
    ANIMACIONES REUTILIZABLES
    ========================================================================== */
 
-/* Animación de entrada con escala y opacidad */
+/* Entrada suave compartida: aparece subiendo ligeramente con un escalado
+   mínimo y un easing muy suave (easeOutQuint). Se aplica por keyframes para
+   que no la pisen las transiciones de hover de los componentes. */
+@keyframes soft-rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animación de entrada con escala y opacidad (sustituye al scale brusco) */
 .scale-in {
-  transform: scale(0.85);
-  opacity: 0.6;
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(22px) scale(0.985);
+  transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .scale-in.visible {
-  transform: scale(1);
   opacity: 1;
+  transform: none;
+  animation: soft-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 
 /* Animación de entrada desde abajo */
 .fade-in-up {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(22px);
+  transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .fade-in-up.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+  animation: soft-rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 
 /* Animación de entrada desde la izquierda */
