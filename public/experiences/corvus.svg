@@ -15,7 +15,6 @@
   <circle cx="1080" cy="410" r="260" fill="#38bdf8" opacity="0.06"/>
   <path d="M680 380 C 790 280, 940 330, 1120 210" fill="none" stroke="url(#corvus-line)" stroke-width="3" opacity="0.35"/>
   <path d="M710 430 C 830 350, 960 390, 1150 300" fill="none" stroke="url(#corvus-line)" stroke-width="2" opacity="0.18"/>
-  <rect x="80" y="160" width="7" height="150" rx="3" fill="#5eead4"/>
   <text x="115" y="235" fill="#ecfeff" font-family="Segoe UI, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="2">CORVUS GLOBAL</text>
   <text x="118" y="285" fill="#99f6e4" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="7">DATA &amp; AUTOMATION</text>
   <text x="118" y="340" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="18" letter-spacing="2">VTC · PAYROLL · MASTER DATA · BI</text>
