@@ -1,6 +1,6 @@
 # Portfolio de Eliceo León
 
-Portfolio personal de Eliceo León Moreta, desarrollador full-stack y especialista en datos, automatización e IA.
+Portfolio personal de Eliceo León Moreta, desarrollador y especialista en datos, automatización e IA.
 
 ## Stack
 

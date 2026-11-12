@@ -4,7 +4,7 @@
     "connect": "Let's connect!",
     "passion": "Passionate about building digital applications",
     "subtitles": {
-      "webDeveloper": "Full-Stack Developer",
+      "webDeveloper": "Developer",
       "dataAnalyst": "Data & Automation Specialist"
     }
   },
@@ -30,7 +30,7 @@
     "dialogo": {
       "title": "Developer",
       "position": "Diálogo Tecnológico",
-      "description": "I created full-stack web solutions for external clients: single-page apps in Angular with reusable SASS/CSS components, REST APIs and JWT services in Spring Boot & Angular with MongoDB persistence, Docker containerization, and the integration of new components to improve scalability and maintainability in an agile setting.",
+      "description": "I created web solutions for external clients: single-page apps in Angular with reusable SASS/CSS components, REST APIs and JWT services in Spring Boot & Angular with MongoDB persistence, Docker containerization, and the integration of new components to improve scalability and maintainability in an agile setting.",
       "date": "April 2024 — August 2024"
     },
     "corvus": {
