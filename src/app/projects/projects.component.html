@@ -35,15 +35,6 @@
           @if (project.summary) {
             <p class="project-summary">{{ project.summary }}</p>
           }
-
-          <div class="project-tech">
-            @for (tech of project.technologies.slice(0, 3); track tech) {
-              <span class="tech-chip">{{ getTechLabel(tech) }}</span>
-            }
-            @if (project.technologies.length > 3) {
-              <span class="tech-chip tech-chip--more">+{{ project.technologies.length - 3 }}</span>
-            }
-          </div>
         </div>
       </article>
     }

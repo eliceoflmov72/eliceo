@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500">
+  <defs>
+    <linearGradient id="rpa-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2e1065"/>
+      <stop offset="0.55" stop-color="#6d28d9"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="rpa-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ddd6fe"/>
+      <stop offset="1" stop-color="#c4b5fd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="500" fill="url(#rpa-bg)"/>
+  <circle cx="1020" cy="90" r="200" fill="#c4b5fd" opacity="0.12"/>
+  <circle cx="1100" cy="420" r="260" fill="#ddd6fe" opacity="0.08"/>
+  <path d="M720 390 C 830 310, 960 350, 1130 240" fill="none" stroke="url(#rpa-line)" stroke-width="3" opacity="0.3"/>
+  <rect x="80" y="160" width="7" height="150" rx="3" fill="#ddd6fe"/>
+  <text x="115" y="235" fill="#f5f3ff" font-family="Segoe UI, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="2">RPA</text>
+  <text x="118" y="285" fill="#ddd6fe" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="7">AUTOMATIZACIÓN DE PROCESOS</text>
+  <text x="118" y="340" fill="#c4b5fd" font-family="Segoe UI, Arial, sans-serif" font-size="18" letter-spacing="2">UIPATH · BPMN · EOI</text>
+</svg>

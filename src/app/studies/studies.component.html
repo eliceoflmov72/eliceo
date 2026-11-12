@@ -1,64 +1,79 @@
-<section class="studies-panel">
-  <div class="studies-list">
-    @for (study of studies; track study.key; let i = $index) {
-    <article class="study-row"
+<section class="studies-list">
+  @for (study of studies; track study.key; let i = $index) {
+    <div class="study-card"
       [attr.data-study]="study.key"
+      [style.background-image]="expandedIndex === i ? 'url(' + study.imageUrl + ')' : 'none'"
+      [class.expanded]="expandedIndex === i"
+      (click)="toggleStudy(i)"
+      (keydown)="handleCardKeydown($event, i)"
+      role="button"
+      tabindex="0"
+      [attr.aria-expanded]="expandedIndex === i"
       appAnimate
       [animationType]="'fade-in-up'"
       [animationOptions]="{ rootMargin: '-50px', delay: i * 100 }"
-      [elementId]="'study-' + i">
+      [elementId]="'study-' + i"
+      [appCloseOnScroll]="expandedIndex === i"
+      (closeOnScroll)="toggleStudy(null)">
 
-      <div class="study-index" aria-hidden="true">
-        <span>0{{ i + 1 }}</span>
-      </div>
+      <div class="study-gradient"></div>
 
-      <div class="study-content">
-        <header class="study-head">
-          <div class="study-heading">
-            <h3 class="study-title">{{ 'studies.' + study.key + '.title' | translate }}</h3>
-            <div class="institution">
-              <i class="pi pi-building-columns" aria-hidden="true"></i>
-              <span>{{ 'studies.' + study.key + '.institution' | translate }}</span>
+      <div class="study-row">
+        <div class="study-thumb" aria-hidden="true">
+          <img [src]="study.imageUrl" [alt]="''">
+        </div>
+
+        <div class="study-main">
+          <div class="study-head">
+            <div class="study-heading">
+              <h3 class="study-title">{{ 'studies.' + study.key + '.title' | translate }}</h3>
+              <div class="institution">
+                <i class="pi pi-building-columns" aria-hidden="true"></i>
+                <span>{{ 'studies.' + study.key + '.institution' | translate }}</span>
+              </div>
+            </div>
+
+            <div class="study-side">
+              <span class="period">{{ 'studies.' + study.key + '.period' | translate }}</span>
+              <span class="study-toggle" aria-hidden="true">
+                <i class="pi pi-chevron-down"></i>
+              </span>
             </div>
           </div>
 
-          <div class="study-side">
-            <span class="period">{{ 'studies.' + study.key + '.period' | translate }}</span>
-            <span class="study-iconchip" aria-hidden="true">
-              <i [class]="'pi ' + study.icon"></i>
-            </span>
-          </div>
-        </header>
+          <div class="study-description-container" [class.expanded]="expandedIndex === i">
+            <p class="study-description">{{ 'studies.' + study.key + '.description' | translate }}</p>
 
-        <div class="study-body">
-          <p class="description">{{ 'studies.' + study.key + '.description' | translate }}</p>
+            @if (expandedIndex === i) {
+              <div class="study-extra">
+                <div class="achievements">
+                  <h4>{{ 'studies.achievements' | translate }}</h4>
+                  <ul>
+                    @for (achievement of 'studies.' + study.key + '.achievements' | translate; track achievement) {
+                      <li>
+                        <i class="pi pi-check-circle" aria-hidden="true"></i>
+                        <span>{{ achievement }}</span>
+                      </li>
+                    }
+                  </ul>
+                </div>
 
-          <div class="achievements">
-            <h4>{{ 'studies.achievements' | translate }}</h4>
-            <ul>
-              @for (achievement of 'studies.' + study.key + '.achievements' | translate; track achievement) {
-                <li>
-                  <i class="pi pi-check-circle" aria-hidden="true"></i>
-                  <span>{{ achievement }}</span>
-                </li>
-              }
-            </ul>
+                @if (study.moreInfoLink) {
+                  <a [href]="study.moreInfoLink"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="certificate">
+                    <span>{{ 'studies.' + study.key + '.moreInfo' | translate }}</span>
+                    <i class="pi pi-arrow-up-right" aria-hidden="true"></i>
+                  </a>
+                }
+              </div>
+            }
           </div>
         </div>
-
-        @if (study.moreInfoLink) {
-          <a [href]="study.moreInfoLink"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="certificate">
-            <span>{{ 'studies.' + study.key + '.moreInfo' | translate }}</span>
-            <i class="pi pi-arrow-up-right" aria-hidden="true"></i>
-          </a>
-        }
       </div>
-    </article>
-    }
-  </div>
+    </div>
+  }
 </section>
 
 <section class="certifications">

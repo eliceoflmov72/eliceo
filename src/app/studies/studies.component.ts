@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { AnimationDirective } from '../shared/directives/animation.directive';
 import { AnimationService } from '../shared/services/animation.service';
+import { CloseOnScrollDirective } from '../shared/directives/close-on-scroll.directive';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 interface CertificationGroup {
@@ -15,27 +16,28 @@ interface CertificationGroup {
 @Component({
   selector: 'app-studies',
   standalone: true,
-  imports: [AnimationDirective, TranslateModule],
+  imports: [AnimationDirective, TranslateModule, CloseOnScrollDirective],
   templateUrl: './studies.component.html',
   styleUrls: ['./studies.component.css']
 })
 export class StudiesComponent {
   readonly linkedinCertificationsUrl = 'https://www.linkedin.com/in/eliceo-leon/details/certifications/';
+  expandedIndex: number | null = null;
 
   studies = [
     {
       key: 'rpa',
-      icon: 'pi-bolt',
+      imageUrl: 'studies/rpa.svg',
       moreInfoLink: 'https://www.eoi.es/'
     },
     {
       key: 'aiBigData',
-      icon: 'pi-microchip',
+      imageUrl: 'studies/ai-bigdata.svg',
       moreInfoLink: 'https://www.educa.jccm.es/es/fpclm/cursos-especializacion/curso-especializacion-inteligencia-artificial-big-data'
     },
     {
       key: 'webDev',
-      icon: 'pi-code',
+      imageUrl: 'studies/webdev.svg',
       moreInfoLink: 'https://www.educa.jccm.es/es/fpclm/ciclos-formativos-1/tecnico-superior-desarrollo-aplicaciones-web'
     }
   ];
@@ -77,4 +79,19 @@ export class StudiesComponent {
     private animationService: AnimationService,
     public translate: TranslateService
   ) { }
+
+  toggleStudy(index: number | null) {
+    if (index === null || this.expandedIndex === index) {
+      this.expandedIndex = null;
+    } else {
+      this.expandedIndex = index;
+    }
+  }
+
+  handleCardKeydown(event: KeyboardEvent, index: number): void {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      this.toggleStudy(index);
+    }
+  }
 }

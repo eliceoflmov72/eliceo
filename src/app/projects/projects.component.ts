@@ -24,29 +24,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   private scrollbarWidth: number = 0;
   private langChangeSubscription: Subscription;
 
-  private readonly techLabels: Record<string, string> = {
-    angular: 'Angular',
-    nestjs: 'NestJS',
-    node: 'Node.js',
-    typescript: 'TypeScript',
-    javascript: 'JavaScript',
-    mongodb: 'MongoDB',
-    mysql: 'MySQL',
-    postgresql: 'PostgreSQL',
-    primeng: 'PrimeNG',
-    tailwind: 'Tailwind CSS',
-    sass: 'Sass',
-    css: 'CSS',
-    html: 'HTML',
-    firebase: 'Firebase',
-    'google-cloud': 'Google Cloud',
-    github: 'GitHub',
-    docker: 'Docker',
-    leaflet: 'Leaflet',
-    python: 'Python',
-    nx: 'Nx'
-  };
-
   constructor(
     private animationService: AnimationService,
     private translate: TranslateService
@@ -78,7 +55,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
         category: this.translate.instant('projects.minerva.category'),
         active: true,
         private: false,
-        technologies: ['angular', 'nestjs', 'typescript', 'tailwind', 'mongodb']
+        technologies: ['angular', 'nestjs', 'python', 'typescript', 'tailwind', 'mongodb']
       },
       {
         name: this.translate.instant('projects.fleets.name'),
@@ -89,7 +66,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
         category: this.translate.instant('projects.fleets.category'),
         active: true,
         private: false,
-        technologies: ['angular', 'nestjs', 'typescript', 'mongodb', 'docker']
+        technologies: ['angular', 'nestjs', 'python', 'typescript', 'mongodb', 'docker']
       },
       {
         name: this.translate.instant('projects.zemios.name'),
@@ -100,7 +77,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
         category: this.translate.instant('projects.zemios.category'),
         active: true,
         private: false,
-        technologies: ['angular', 'nestjs', 'typescript', 'sass', 'github']
+        technologies: ['angular', 'nestjs', 'python', 'typescript', 'sass', 'github']
       },
       {
         name: this.translate.instant('projects.abonOnline.name'),
@@ -178,10 +155,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       event.preventDefault();
       this.toggleActive(project);
     }
-  }
-
-  getTechLabel(tech: string): string {
-    return this.techLabels[tech] ?? tech.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
   }
 
   getStatusKey(project: Project): string {
